@@ -41,9 +41,14 @@ extension TeamViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as! TeamCell
         cell.teamName.text = teamArray[indexPath.row].name
+        cell.projectCount.text = String(teamArray[indexPath.row].projectsCount)
         cell.membersCount.text = String(teamArray[indexPath.row].membersCount)
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let teamDetails = UIStoryboard(name: "TeamDetails", bundle: nil).instantiateViewController(identifier: "TeamDetailsController") as! TeamDetailsController
+        navigationController?.pushViewController(teamDetails, animated: true)
+        
+    }
     
 }

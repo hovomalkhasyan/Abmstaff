@@ -8,35 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Staff Details Controller-->
-        <scene sceneID="ejr-Ey-fQJ">
+        <!--Team Details Controller-->
+        <scene sceneID="dVe-Fj-vrE">
             <objects>
-                <viewController storyboardIdentifier="StaffDetailsController" id="AEe-iA-Ohj" customClass="StaffDetailsController" customModule="Abmstaff" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zop-sj-6Lg">
+                <viewController storyboardIdentifier="TeamDetailsController" id="lIe-e6-q9q" customClass="TeamDetailsController" customModule="Abmstaff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRl-MP-qCT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-5d-Icr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-RN-gOr">
                                 <rect key="frame" x="186" y="84" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="5os-Pv-1Hh"/>
+                        <viewLayoutGuide key="safeArea" id="Ddw-Rb-tDD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GBz-5d-Icr" firstAttribute="top" secondItem="5os-Pv-1Hh" secondAttribute="top" constant="40" id="YzI-Ir-Wf1"/>
-                            <constraint firstItem="GBz-5d-Icr" firstAttribute="centerX" secondItem="Zop-sj-6Lg" secondAttribute="centerX" id="i7x-d3-cbe"/>
+                            <constraint firstItem="K6r-RN-gOr" firstAttribute="centerX" secondItem="qRl-MP-qCT" secondAttribute="centerX" id="eez-Av-XoI"/>
+                            <constraint firstItem="K6r-RN-gOr" firstAttribute="top" secondItem="Ddw-Rb-tDD" secondAttribute="top" constant="40" id="vu2-d6-4Rl"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userName" destination="GBz-5d-Icr" id="vH9-ii-P08"/>
+                        <outlet property="teamName" destination="K6r-RN-gOr" id="tVf-td-Rp8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nmr-Qb-oPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMC-eW-7N5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="-55"/>
+            <point key="canvasLocation" x="218.84057971014494" y="111.83035714285714"/>
         </scene>
     </scenes>
     <resources>

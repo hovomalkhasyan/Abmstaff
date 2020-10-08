@@ -19,6 +19,7 @@ class ProjectController: UIViewController {
             self.projectsArray = response
             self.tableView.reloadData()
         }
+        
     }
     private func setupTableView() {
         tableView.delegate = self
@@ -40,6 +41,9 @@ extension ProjectController: UITableViewDelegate, UITableViewDataSource {
         cell.projetName.text = projectsArray[indexPath.row].name
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsVC = UIStoryboard(name: "ProjectDetails", bundle: nil).instantiateViewController(identifier: "ProjectDetailsController")
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
     
 }

@@ -39,7 +39,10 @@ class MenuListController : UITableViewController {
         }else if indexPath.row == 3 {
             let projectStory = UIStoryboard(name: "Project", bundle: nil).instantiateViewController(identifier: "ProjectController")
             navigationController?.pushViewController(projectStory, animated: true)
-        }else if indexPath.row == 5{
+        }else if indexPath.row == 4 {
+            let settingsStory = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(identifier: "SettingsController")
+            navigationController?.pushViewController(settingsStory, animated: true)
+        }else if indexPath.row == 5 {
             let loginStory = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController")
             UIApplication.shared.windows.first?.rootViewController = loginStory
         }

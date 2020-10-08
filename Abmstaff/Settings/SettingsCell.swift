@@ -1,17 +1,16 @@
 //
-//  TeamCell.swift
+//  SettingsCell.swift
 //  Abmstaff
 //
-//  Created by Hovo on 10/6/20.
+//  Created by Hovo on 10/8/20.
 //
 
 import UIKit
 
-class TeamCell: UITableViewCell {
+class SettingsCell: UITableViewCell {
 
-    @IBOutlet weak var projectCount: UILabel!
-    @IBOutlet weak var teamName: UILabel!
-    @IBOutlet weak var membersCount: UILabel!
+    @IBOutlet weak var count: UILabel!
+    @IBOutlet weak var name: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,4 +22,5 @@ class TeamCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+   
 }
