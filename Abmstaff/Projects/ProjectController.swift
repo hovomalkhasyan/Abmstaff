@@ -19,7 +19,7 @@ class ProjectController: UIViewController {
             self.projectsArray = response
             self.tableView.reloadData()
         }
-
+        self.title = "Projects"
     }
     private func setupTableView() {
         tableView.delegate = self

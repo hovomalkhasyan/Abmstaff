@@ -20,6 +20,7 @@ class StaffController: UIViewController {
             self.tableView.reloadData()
         }
         self.navigationController?.isNavigationBarHidden = false
+        self.title = "Staff"
     }
     
     private func setupTableView() {

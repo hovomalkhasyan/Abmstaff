@@ -21,6 +21,7 @@ class SettingsController: UIViewController {
         }
         let newBtn = UIBarButtonItem(title: "Platforms", style: .plain, target: self, action: #selector(rightButton))
         self.navigationItem.rightBarButtonItem = newBtn
+        self.title = "Settings"
     }
     private func setupTableView() {
         tableView.delegate = self

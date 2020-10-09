@@ -19,6 +19,7 @@ class TeamViewController: UIViewController {
             self.teamArray = response
             self.tableView.reloadData()
         }
+        self.title = "Team"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
