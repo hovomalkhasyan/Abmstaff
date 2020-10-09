@@ -9,7 +9,6 @@ import UIKit
 
 class PlatformsCell: UITableViewCell {
 
-    @IBOutlet weak var type: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var count: UILabel!
     override func awakeFromNib() {

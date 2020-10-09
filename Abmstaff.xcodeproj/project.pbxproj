@@ -118,7 +118,6 @@
 			children = (
 				DA5ED9D0252F26CE00B59941 /* StaffDetailsController.swift */,
 				DA5ED9D3252F270D00B59941 /* StaffDetails.storyboard */,
-				DAC55026252C88C900EE5404 /* Staff */,
 			);
 			path = StaffDetails;
 			sourceTree = "<group>";
@@ -200,10 +199,10 @@
 				DA94EF6B2525D41A00177EF7 /* Info.plist */,
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA94E5AC252DD39D0013C2B6 /* Menu.swift */,
+				DAC55026252C88C900EE5404 /* Staff */,
 				DAD54225252F55340020CD8F /* Technology */,
 				DAD54210252F49BC0020CD8F /* Settings */,
 				DA94E5B9252DE1300013C2B6 /* User */,
-				DA5ED9D6252F272200B59941 /* StaffDetails */,
 				DA802D37252DFB480089EAE8 /* Conection */,
 				DA94E5AF252DDB150013C2B6 /* Projects */,
 				DAC5501B252C818500EE5404 /* Team */,
@@ -225,6 +224,7 @@
 		DAC55026252C88C900EE5404 /* Staff */ = {
 			isa = PBXGroup;
 			children = (
+				DA5ED9D6252F272200B59941 /* StaffDetails */,
 				DAC55023252C88C500EE5404 /* Staff.storyboard */,
 				DAC55028252C895200EE5404 /* StaffCell.swift */,
 				DAC55020252C88AF00EE5404 /* StaffController.swift */,

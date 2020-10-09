@@ -45,6 +45,7 @@ class MenuListController : UITableViewController {
         }else if indexPath.row == 5 {
             let loginStory = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController")
             UIApplication.shared.windows.first?.rootViewController = loginStory
+            UserDefaults.standard.removeObject(forKey: "token")
         }
     }
     

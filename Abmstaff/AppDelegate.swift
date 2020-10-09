@@ -9,12 +9,9 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if UserDefaults.standard.value(forKey: "token") != nil {
-            let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "navigation")
-            UIApplication.shared.windows.first?.rootViewController = newVC
-        }
+       
         return true
     }
 

@@ -47,6 +47,7 @@ extension TeamViewController: UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let teamDetails = UIStoryboard(name: "TeamDetails", bundle: nil).instantiateViewController(identifier: "TeamDetailsController") as! TeamDetailsController
+        teamDetails.id = teamArray[indexPath.row].id
         navigationController?.pushViewController(teamDetails, animated: true)
         
     }

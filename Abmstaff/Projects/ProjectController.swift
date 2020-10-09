@@ -19,11 +19,14 @@ class ProjectController: UIViewController {
             self.projectsArray = response
             self.tableView.reloadData()
         }
-        
+
     }
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    @objc func addProject() {
+        
     }
     
 }
@@ -42,7 +45,8 @@ extension ProjectController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailsVC = UIStoryboard(name: "ProjectDetails", bundle: nil).instantiateViewController(identifier: "ProjectDetailsController")
+        let detailsVC = UIStoryboard(name: "ProjectDetails", bundle: nil).instantiateViewController(identifier: "ProjectDetailsController") as! ProjectDetailsController
+        detailsVC.id = projectsArray[indexPath.row].id
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     

@@ -9,11 +9,12 @@ import UIKit
 import Alamofire
 
 class TeamDetailsController: UIViewController {
-    var detailsEndPoint = "Team/Details/12"
+    var detailsEndPoint = "Team/Details/"
     @IBOutlet weak var teamName: UILabel!
+    var id = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetWorkService.request(url: detailsEndPoint, method: .get, param: nil, encoding: JSONEncoding.default) { (response: TeamDetailsID ) in
+        NetWorkService.request(url: detailsEndPoint + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: TeamDetailsID ) in
             self.teamName.text = response.name
         }
     }

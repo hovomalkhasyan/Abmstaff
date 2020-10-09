@@ -44,6 +44,7 @@ extension StaffController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newVC = UIStoryboard(name: "StaffDetails", bundle: nil).instantiateViewController(identifier: "StaffDetailsController") as! StaffDetailsController
+        newVC.id = staffArray[indexPath.row].id
         navigationController?.pushViewController(newVC, animated: true)
     }
     

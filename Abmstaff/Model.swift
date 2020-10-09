@@ -70,24 +70,36 @@ struct ProjectList: Codable {
 
 struct UserDetailsId: Codable {
     let fatherName: String?
-    let accountNumber, phone: String
+    let accountNumber : String?
+    let phone: String
     let address: String?
     let gender: Int
-    let dateOfBirth, employeeDate, blockDate: String
+    let dateOfBirth : String
+    let employeeDate : String?
+    let blockDate: String?
     let email: String
     let isBlocked: Bool
     let gitLabID, roleID: String?
-    let roleName: String
+    let roleName: String?
     let linkedinLink, instagramLink, facebookLink, note: String?
     let secondPhone, careerStartDate: String?
-    let team: String
+    let team: String?
     let teamID, positionID: String?
     let positionName: String
     let technologies: [Technology]
-    let projects, files: [String]
+    let projects : [Project]?
+    let files: [String]
     let id: Int
     let firstName, lastName: String
-    let profilePhoto: String
+    let profilePhoto: String?
+}
+
+struct Project: Codable {
+    let projectID: Int?
+    let projectName: String?
+    let platformID: Int?
+    let platformName: String?
+
 }
 
 struct Technology: Codable {
@@ -98,17 +110,22 @@ struct Technology: Codable {
 // MARK: - TeamDetailsID
 struct TeamDetailsID: Codable {
     let members: [Member]
-    let projects: [String]
+    let projects: [TeamProject]?
     let id: Int
     let name: String
 }
 
 struct Member: Codable {
     let isLead: Bool
-    let position: String
+    let position: String?
     let id: Int
     let firstName, lastName: String
     let profilePhoto: String?
+}
+struct TeamProject: Codable {
+    let id: Int
+    let name: String
+    let image: String?
 }
 
 // MARK: - ProjectDetailsID
@@ -121,13 +138,13 @@ struct ProjectDetailsID: Codable {
     let appleAccountLogin, appleAccountPassword, googleAccountLogin, googleAccountPassword: String?
     let partnerID: String?
     let teamID: Int?
-    let teamName: String
+    let teamName: String?
     let members: [DetailMember]
     let platforms: [Platform]
     let createdDt: String
     let id: Int
     let name: String
-    let image: String
+    let image: String?
 
 }
 
@@ -136,7 +153,7 @@ struct DetailMember: Codable {
     let position: String
     let id: Int
     let firstName, lastName: String
-    let profilePhoto: String
+    let profilePhoto: String?
 
 }
 
