@@ -30,6 +30,7 @@
 		DA94EF6A2525D41A00177EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA94EF682525D41A00177EF7 /* LaunchScreen.storyboard */; };
 		DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94EF752525D70100177EF7 /* NetWorkService.swift */; };
 		DA94EF792525DAC700177EF7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94EF782525DAC700177EF7 /* Model.swift */; };
+		DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D392534623C00B35831 /* ViewDemo.swift */; };
 		DAC55016252C7FEC00EE5404 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55015252C7FEC00EE5404 /* TeamViewController.swift */; };
 		DAC55019252C816F00EE5404 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55018252C816F00EE5404 /* TeamCell.swift */; };
 		DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55020252C88AF00EE5404 /* StaffController.swift */; };
@@ -70,6 +71,7 @@
 		DA94EF6B2525D41A00177EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA94EF752525D70100177EF7 /* NetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
 		DA94EF782525DAC700177EF7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DA9A2D392534623C00B35831 /* ViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDemo.swift; sourceTree = "<group>"; };
 		DAC55015252C7FEC00EE5404 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		DAC55018252C816F00EE5404 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		DAC55020252C88AF00EE5404 /* StaffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				DA94EF6B2525D41A00177EF7 /* Info.plist */,
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA94E5AC252DD39D0013C2B6 /* Menu.swift */,
+				DA9A2D392534623C00B35831 /* ViewDemo.swift */,
 				DAC55026252C88C900EE5404 /* Staff */,
 				DAD54225252F55340020CD8F /* Technology */,
 				DAD54210252F49BC0020CD8F /* Settings */,
@@ -389,6 +392,7 @@
 				DA5ED9E6252F3CDA00B59941 /* TeamDetailsController.swift in Sources */,
 				DAC55016252C7FEC00EE5404 /* TeamViewController.swift in Sources */,
 				DA94E5B7252DDB810013C2B6 /* ProjectCell.swift in Sources */,
+				DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */,
 				DA5ED9D1252F26CE00B59941 /* StaffDetailsController.swift in Sources */,
 				DA94EF792525DAC700177EF7 /* Model.swift in Sources */,
 				DA94EF622525D41900177EF7 /* ViewController.swift in Sources */,
