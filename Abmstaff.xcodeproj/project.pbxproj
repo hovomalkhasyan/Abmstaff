@@ -31,6 +31,8 @@
 		DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94EF752525D70100177EF7 /* NetWorkService.swift */; };
 		DA94EF792525DAC700177EF7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94EF782525DAC700177EF7 /* Model.swift */; };
 		DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D392534623C00B35831 /* ViewDemo.swift */; };
+		DA9A2D3F25348C0600B35831 /* EnterCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */; };
+		DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9A2D4625348C3000B35831 /* Login.storyboard */; };
 		DAC55016252C7FEC00EE5404 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55015252C7FEC00EE5404 /* TeamViewController.swift */; };
 		DAC55019252C816F00EE5404 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55018252C816F00EE5404 /* TeamCell.swift */; };
 		DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55020252C88AF00EE5404 /* StaffController.swift */; };
@@ -72,6 +74,8 @@
 		DA94EF752525D70100177EF7 /* NetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
 		DA94EF782525DAC700177EF7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DA9A2D392534623C00B35831 /* ViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDemo.swift; sourceTree = "<group>"; };
+		DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeController.swift; sourceTree = "<group>"; };
+		DA9A2D4625348C3000B35831 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		DAC55015252C7FEC00EE5404 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		DAC55018252C816F00EE5404 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		DAC55020252C88AF00EE5404 /* StaffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 		DA94EF5C2525D41900177EF7 /* Abmstaff */ = {
 			isa = PBXGroup;
 			children = (
+				DA9A2D3D25348BDF00B35831 /* Login  */,
 				DA94EF5D2525D41900177EF7 /* AppDelegate.swift */,
 				DA94EF5F2525D41900177EF7 /* SceneDelegate.swift */,
 				DA94EF612525D41900177EF7 /* ViewController.swift */,
@@ -212,6 +217,15 @@
 				DAC5502E252C90FF00EE5404 /* NetWorking */,
 			);
 			path = Abmstaff;
+			sourceTree = "<group>";
+		};
+		DA9A2D3D25348BDF00B35831 /* Login  */ = {
+			isa = PBXGroup;
+			children = (
+				DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */,
+				DA9A2D4625348C3000B35831 /* Login.storyboard */,
+			);
+			path = "Login ";
 			sourceTree = "<group>";
 		};
 		DAC5501B252C818500EE5404 /* Team */ = {
@@ -330,6 +344,7 @@
 				DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */,
 				DA5ED9D4252F270D00B59941 /* StaffDetails.storyboard in Resources */,
 				DA94EF652525D41900177EF7 /* Main.storyboard in Resources */,
+				DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */,
 				DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */,
 				DA1D912F252DE7CE00AB4ADA /* User.storyboard in Resources */,
 				DAD54212252F49C90020CD8F /* Settings.storyboard in Resources */,
@@ -402,6 +417,7 @@
 				DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */,
 				DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */,
 				DAD54219252F4AE70020CD8F /* SettingsCell.swift in Sources */,
+				DA9A2D3F25348C0600B35831 /* EnterCodeController.swift in Sources */,
 				DA305B5E2526050C007ED275 /* UsersCell.swift in Sources */,
 				DAD54215252F49DD0020CD8F /* SettingsController.swift in Sources */,
 				DA94EF602525D41900177EF7 /* SceneDelegate.swift in Sources */,

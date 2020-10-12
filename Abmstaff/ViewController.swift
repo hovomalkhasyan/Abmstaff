@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var signInMessage: UILabel!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var forgotPass: UIButton!
+    @IBOutlet weak var passwordShowbtn: UIButton!
+    var iconClick = true
     var signUp = true {
         willSet {
             if newValue {
@@ -25,13 +27,14 @@ class ViewController: UIViewController {
                 passwordTF.isHidden = true
                 signInMessage.text = "To reset your password type your email"
                 forgotPass.setTitle("Sign In", for: .normal)
-                
+                passwordShowbtn.isHidden = true
             } else {
-                signIn.text = "Sing In"
+                signIn.text = "SIGN IN"
                 signUpBtn.setTitle("Sign In", for: .normal)
                 passwordTF.isHidden = false
                 signInMessage.text = "Sign in with your email"
                 forgotPass.setTitle("Forgot password ?", for: .normal)
+                passwordShowbtn.isHidden = false
             }
         }
     }
@@ -48,40 +51,32 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     @IBAction func signinAction(_ sender: UIButton) {
-        if signUp == false {
-            if loginTF.text == "" || passwordTF.text == "" {
-                showAlert(title: "Sign in Failed", message: "Please enter Email Address and Password")
-            }else if CheckInternet.Connection() {
-                let params : [String: Any] = [
-                    "login": loginTF.text!,
-                    "password": passwordTF.text!]
-                
-                NetWorkService.request(url: urlEndpoint, method: .post, param: params, encoding: JSONEncoding.default) { (response: DataClass) in
-                    print(response.token)
-                    UserDefaults.standard.setValue(response.token, forKey: "token")
-                    let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "navigation")
-                    UIApplication.shared.windows.first?.rootViewController = newVC
+        if CheckInternet.Connection() {
+            if signUp == false{
+                if loginTF.text == "" || passwordTF.text == "" {
+                    showAlert(title: "Sign in Failed", message: "Please enter Email Address and Password")
+                }else {
+                    let params : [String: Any] = [
+                        "login": loginTF.text!,
+                        "password": passwordTF.text!]
                     
-                }
-            }else {
-                let alertController = UIAlertController(title: "Your Device is not connected with internet", message: nil, preferredStyle: .alert)
-                let alertAcion = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                
-                let settingsAction = UIAlertAction(title: "Settings", style: .default) { (alert) in
-                    guard let url = URL(string: "App-prefs:root=WIFI") else {return}
-                    UIApplication.shared.open(url) { (result) in
-                        if result {
-                        }
+                    NetWorkService.request(url: urlEndpoint, method: .post, param: params, encoding: JSONEncoding.default) { (response: DataClass) in
+                        print(response.token)
+                        UserDefaults.standard.setValue(response.token, forKey: "token")
+                        let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "navigation")
+                        UIApplication.shared.windows.first?.rootViewController = newVC
                     }
                 }
-                alertController.addAction(alertAcion)
-                alertController.addAction(settingsAction)
-                present(alertController, animated: true, completion: nil)
+            } else {
+                if loginTF.text == "" {
+                    showAlert(title: "Email is empty", message: "Please enter your email")
+                }else {
+                    let codeStory = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(identifier: "EnterCodeController")
+                    navigationController?.pushViewController(codeStory, animated: true)
+                }
             }
         } else {
-            if loginTF.text == "" {
-                showAlert(title: "Email is empty", message: "Please enter your email")
-            }
+            showConnectionAlert()
         }
     }
     private func showAlert(title: String, message: String) {
@@ -90,8 +85,36 @@ class ViewController: UIViewController {
         alert.addAction(okBtn)
         present(alert, animated: true, completion: nil)
     }
-    @IBAction func forgotPassword(_ sender: UIButton) {
+    
+    private func showConnectionAlert() {
+        let alertController = UIAlertController(title: "Your Device is not connected with internet" , message: nil, preferredStyle: .alert)
+        let alertAcion = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (alert) in
+            guard let url = URL(string: "App-prefs:root=WIFI") else {return}
+            UIApplication.shared.open(url) { (result) in
+                if result {
+                }
+            }
+        }
+        alertController.addAction(alertAcion)
+        alertController.addAction(settingsAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    @IBAction func forgotPassword(_ sender: UIButton) {
         signUp = !signUp
+        
+    }
+    @IBAction func showPassword(_ sender: UIButton) {
+        if(iconClick == true) {
+            passwordTF.isSecureTextEntry = false
+            passwordShowbtn.setImage(UIImage(named: "show"), for: .normal)
+        } else {
+            passwordTF.isSecureTextEntry = true
+            passwordShowbtn.setImage(UIImage(named: "show1"), for: .normal)
+        }
+        
+        iconClick = !iconClick
     }
 }
+
