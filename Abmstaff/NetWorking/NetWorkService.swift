@@ -43,4 +43,10 @@ class NetWorkService {
             }
         }
     }
+   private class func showAlert() {
+        let alert = UIAlertController(title: "Password or Email is incorrect", message: nil, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
+    }
+    
 }

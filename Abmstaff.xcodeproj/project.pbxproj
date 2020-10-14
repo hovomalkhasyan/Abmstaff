@@ -18,6 +18,7 @@
 		DA5ED9EB252F418800B59941 /* ProjectDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5ED9EA252F418800B59941 /* ProjectDetailsController.swift */; };
 		DA5ED9EF252F419E00B59941 /* ProjectDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5ED9EE252F419E00B59941 /* ProjectDetails.storyboard */; };
 		DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */; };
+		DA8943452535EBDA00965C7D /* Reserve.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8943442535EBDA00965C7D /* Reserve.storyboard */; };
 		DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E5AC252DD39D0013C2B6 /* Menu.swift */; };
 		DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA94E5B0252DDB290013C2B6 /* Project.storyboard */; };
 		DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E5B3252DDB490013C2B6 /* ProjectController.swift */; };
@@ -44,6 +45,9 @@
 		DAD54227252F55860020CD8F /* Platforms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD54226252F55860020CD8F /* Platforms.storyboard */; };
 		DAD5422A252F559B0020CD8F /* PlatformsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54229252F559B0020CD8F /* PlatformsController.swift */; };
 		DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */; };
+		DAD686612535B79900E239C7 /* textFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD686602535B79900E239C7 /* textFld.swift */; };
+		DAD686652535C17200E239C7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD686642535C17200E239C7 /* Home.storyboard */; };
+		DAD686682535C18200E239C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD686672535C18200E239C7 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,7 @@
 		DA5ED9EA252F418800B59941 /* ProjectDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsController.swift; sourceTree = "<group>"; };
 		DA5ED9EE252F419E00B59941 /* ProjectDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectDetails.storyboard; sourceTree = "<group>"; };
 		DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		DA8943442535EBDA00965C7D /* Reserve.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reserve.storyboard; sourceTree = "<group>"; };
 		DA94E5AC252DD39D0013C2B6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		DA94E5B0252DDB290013C2B6 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		DA94E5B3252DDB490013C2B6 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 		DAD54226252F55860020CD8F /* Platforms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Platforms.storyboard; sourceTree = "<group>"; };
 		DAD54229252F559B0020CD8F /* PlatformsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformsController.swift; sourceTree = "<group>"; };
 		DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformsCell.swift; sourceTree = "<group>"; };
+		DAD686602535B79900E239C7 /* textFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFld.swift; sourceTree = "<group>"; };
+		DAD686642535C17200E239C7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		DAD686672535C18200E239C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4ED880AB4D1228E146BC331 /* Pods-Abmstaff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abmstaff.release.xcconfig"; path = "Target Support Files/Pods-Abmstaff/Pods-Abmstaff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +204,6 @@
 		DA94EF5C2525D41900177EF7 /* Abmstaff */ = {
 			isa = PBXGroup;
 			children = (
-				DA9A2D3D25348BDF00B35831 /* Login  */,
 				DA94EF5D2525D41900177EF7 /* AppDelegate.swift */,
 				DA94EF5F2525D41900177EF7 /* SceneDelegate.swift */,
 				DA94EF612525D41900177EF7 /* ViewController.swift */,
@@ -207,6 +214,8 @@
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA94E5AC252DD39D0013C2B6 /* Menu.swift */,
 				DA9A2D392534623C00B35831 /* ViewDemo.swift */,
+				DA9A2D3D25348BDF00B35831 /* Login  */,
+				DAD686632535C16100E239C7 /* HomePage */,
 				DAC55026252C88C900EE5404 /* Staff */,
 				DAD54225252F55340020CD8F /* Technology */,
 				DAD54210252F49BC0020CD8F /* Settings */,
@@ -215,6 +224,8 @@
 				DA94E5AF252DDB150013C2B6 /* Projects */,
 				DAC5501B252C818500EE5404 /* Team */,
 				DAC5502E252C90FF00EE5404 /* NetWorking */,
+				DAD686602535B79900E239C7 /* textFld.swift */,
+				DA8943442535EBDA00965C7D /* Reserve.storyboard */,
 			);
 			path = Abmstaff;
 			sourceTree = "<group>";
@@ -277,6 +288,15 @@
 			path = Technology;
 			sourceTree = "<group>";
 		};
+		DAD686632535C16100E239C7 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				DAD686642535C17200E239C7 /* Home.storyboard */,
+				DAD686672535C18200E239C7 /* HomeViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,7 +357,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5ED9EF252F419E00B59941 /* ProjectDetails.storyboard in Resources */,
+				DA8943452535EBDA00965C7D /* Reserve.storyboard in Resources */,
 				DAD54227252F55860020CD8F /* Platforms.storyboard in Resources */,
+				DAD686652535C17200E239C7 /* Home.storyboard in Resources */,
 				DA94EF6A2525D41A00177EF7 /* LaunchScreen.storyboard in Resources */,
 				DA94EF672525D41A00177EF7 /* Assets.xcassets in Resources */,
 				DA5ED9E3252F3CC000B59941 /* TeamDetails.storyboard in Resources */,
@@ -411,8 +433,10 @@
 				DA5ED9D1252F26CE00B59941 /* StaffDetailsController.swift in Sources */,
 				DA94EF792525DAC700177EF7 /* Model.swift in Sources */,
 				DA94EF622525D41900177EF7 /* ViewController.swift in Sources */,
+				DAD686682535C18200E239C7 /* HomeViewController.swift in Sources */,
 				DA94EF5E2525D41900177EF7 /* AppDelegate.swift in Sources */,
 				DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */,
+				DAD686612535B79900E239C7 /* textFld.swift in Sources */,
 				DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */,
 				DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */,
 				DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */,
