@@ -10,9 +10,11 @@ import Alamofire
 
 class ViewController: UIViewController {
     // MARK: - UrlEndpoints
-    let urlEndpoint = "User/Login"
+    
+    private let urlEndpoint = "User/Login"
     
     // MARK: - IBOutlets
+    
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTF: UITextField!
@@ -22,10 +24,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var forgotPass: UIButton!
     @IBOutlet weak var passwordShowbtn: UIButton!
     
-// MARK: - ForgotPass
+    // MARK: - ForgotPass
     
-    var iconClick = true
-    var signUp = true {
+    private var iconClick = true
+    private var signUp = true {
         willSet {
             if newValue {
                 signIn.text = "FORGOT PASSWORD"
@@ -53,18 +55,23 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(tap)
         signUp = false
         setupTextFields()
+        loginTF.delegate = self
+        passwordTF.delegate = self
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerNotifications()
     }
+    
     private func setupTextFields() {
         loginTF.layer.cornerRadius = 15.0
         passwordTF.layer.cornerRadius = 15.0
-     
+        
     }
     
     // MARK: - KeyboardSettings
+    
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -79,9 +86,10 @@ class ViewController: UIViewController {
     
     @objc private func keyboardWillHide(notification: NSNotification){
         scrollView.contentInset.bottom = 0
+        
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
     // MARK: - signinAction
@@ -115,6 +123,7 @@ class ViewController: UIViewController {
             showConnectionAlert()
         }
     }
+    
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -142,7 +151,6 @@ class ViewController: UIViewController {
     
     @IBAction func forgotPassword(_ sender: UIButton) {
         signUp = !signUp
-        
     }
     
     // MARK: - IBActionshowPassword
@@ -158,5 +166,21 @@ class ViewController: UIViewController {
         
         iconClick = !iconClick
     }
+    
+}
+
+// MARK: - TextFieldDelegate
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == loginTF {
+            passwordTF.becomeFirstResponder()
+        } else if textField == passwordTF {
+            self.view.endEditing(true)
+        }
+        
+        return true
+    }
+    
 }
 

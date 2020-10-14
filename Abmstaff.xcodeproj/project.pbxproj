@@ -39,6 +39,7 @@
 		DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55020252C88AF00EE5404 /* StaffController.swift */; };
 		DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC55023252C88C500EE5404 /* Staff.storyboard */; };
 		DAC55029252C895200EE5404 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55028252C895200EE5404 /* StaffCell.swift */; };
+		DACB33B12537311800CD1CE9 /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACB33B02537311800CD1CE9 /* Team.storyboard */; };
 		DAD54212252F49C90020CD8F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD54211252F49C90020CD8F /* Settings.storyboard */; };
 		DAD54215252F49DD0020CD8F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54214252F49DD0020CD8F /* SettingsController.swift */; };
 		DAD54219252F4AE70020CD8F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54218252F4AE70020CD8F /* SettingsCell.swift */; };
@@ -86,6 +87,7 @@
 		DAC55020252C88AF00EE5404 /* StaffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffController.swift; sourceTree = "<group>"; };
 		DAC55023252C88C500EE5404 /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
 		DAC55028252C895200EE5404 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffCell.swift; sourceTree = "<group>"; };
+		DACB33B02537311800CD1CE9 /* Team.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
 		DAD54211252F49C90020CD8F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		DAD54214252F49DD0020CD8F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		DAD54218252F4AE70020CD8F /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				DAC55015252C7FEC00EE5404 /* TeamViewController.swift */,
 				DAC55018252C816F00EE5404 /* TeamCell.swift */,
+				DACB33B02537311800CD1CE9 /* Team.storyboard */,
 				DA5ED9E1252F3CA500B59941 /* TeamDetails */,
 			);
 			path = Team;
@@ -365,6 +368,7 @@
 				DA5ED9E3252F3CC000B59941 /* TeamDetails.storyboard in Resources */,
 				DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */,
 				DA5ED9D4252F270D00B59941 /* StaffDetails.storyboard in Resources */,
+				DACB33B12537311800CD1CE9 /* Team.storyboard in Resources */,
 				DA94EF652525D41900177EF7 /* Main.storyboard in Resources */,
 				DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */,
 				DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */,

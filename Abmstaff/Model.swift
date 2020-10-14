@@ -177,3 +177,31 @@ struct Platforms: Codable {
     let name: String
     let type: Int
 }
+
+// MARK: - Partners
+
+struct Datum: Codable {
+    let id: Int
+    let companyName: String
+    let logo: String?
+}
+
+// MARK: - PartnersDetails
+struct PartnerDetails: Codable {
+    let taxID, note, website, linkedinLink: String?
+    let instagramLink, facebookLink, fax: String?
+    let country: String
+    let city, address, timezone: String?
+    let email: String
+    let projects: [PartnerProject]
+    let id: Int
+    let companyName: String
+    let logo: String?
+    
+}
+
+struct PartnerProject: Codable {
+    let id: Int
+    let name: String
+    let image: String?
+}
