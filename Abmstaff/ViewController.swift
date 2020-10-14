@@ -9,20 +9,20 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
-// MARK: - UrlEndpoints
+    // MARK: - UrlEndpoints
     let urlEndpoint = "User/Login"
     
-// MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTF: UITextField!
-    @IBOutlet weak var demoView: Demo!
     @IBOutlet weak var signIn: UILabel!
     @IBOutlet weak var signInMessage: UILabel!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var forgotPass: UIButton!
     @IBOutlet weak var passwordShowbtn: UIButton!
     
+// MARK: - ForgotPass
     
     var iconClick = true
     var signUp = true {
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             }
         }
     }
-// MARK: - Life Sycle
+    // MARK: - Life Sycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,34 +52,44 @@ class ViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         signUp = false
+        setupTextFields()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerNotifications()
     }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
+    private func setupTextFields() {
+        loginTF.layer.cornerRadius = 15.0
+        passwordTF.layer.cornerRadius = 15.0
+     
     }
-// MARK: - KeyboardSettings
+    
+    // MARK: - KeyboardSettings
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification){
-        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height + 165
+        guard let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        scrollView.contentInset.bottom = view.convert(keyboardFrame, from: nil).size.height
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardFrame.height)
+        
     }
-
+    
     @objc private func keyboardWillHide(notification: NSNotification){
         scrollView.contentInset.bottom = 0
     }
-// MARK: - IBActions
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    // MARK: - signinAction
     
     @IBAction func signinAction(_ sender: UIButton) {
         if CheckInternet.Connection() {
             if signUp == false{
-                if loginTF.text == "" || passwordTF.text == "" {
+                if  loginTF.text == "" ||  passwordTF.text == "" {
                     showAlert(title: "Sign in Failed", message: "Please enter Email Address and Password")
                 }else {
                     let params : [String: Any] = [
@@ -90,7 +100,6 @@ class ViewController: UIViewController {
                         print(response.token)
                         UserDefaults.standard.setValue(response.token, forKey: "token")
                         let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "navigation")
-//                        let newVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "TabBar")
                         UIApplication.shared.windows.first?.rootViewController = newVC
                     }
                 }
@@ -128,10 +137,16 @@ class ViewController: UIViewController {
         alertController.addAction(settingsAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: - IBActionforgotPassword
+    
     @IBAction func forgotPassword(_ sender: UIButton) {
         signUp = !signUp
         
     }
+    
+    // MARK: - IBActionshowPassword
+    
     @IBAction func showPassword(_ sender: UIButton) {
         if(iconClick == true) {
             passwordTF.isSecureTextEntry = false
