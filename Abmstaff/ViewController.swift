@@ -92,10 +92,11 @@ class ViewController: UIViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    // MARK: - signinAction
+    // MARK: - SigninAction
     
     @IBAction func signinAction(_ sender: UIButton) {
         if CheckInternet.Connection() {
+            self.view.endEditing(true)
             if signUp == false{
                 if  loginTF.text == "" ||  passwordTF.text == "" {
                     showAlert(title: "Sign in Failed", message: "Please enter Email Address and Password")

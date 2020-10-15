@@ -17,8 +17,12 @@
 		DA5ED9E6252F3CDA00B59941 /* TeamDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5ED9E5252F3CDA00B59941 /* TeamDetailsController.swift */; };
 		DA5ED9EB252F418800B59941 /* ProjectDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5ED9EA252F418800B59941 /* ProjectDetailsController.swift */; };
 		DA5ED9EF252F419E00B59941 /* ProjectDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5ED9EE252F419E00B59941 /* ProjectDetails.storyboard */; };
+		DA64A6102538573600EEEB08 /* PartnersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64A60F2538573600EEEB08 /* PartnersController.swift */; };
+		DA64A6132538574A00EEEB08 /* Partners.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64A6122538574A00EEEB08 /* Partners.storyboard */; };
+		DA64A61B2538580900EEEB08 /* PartnersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64A61A2538580900EEEB08 /* PartnersCell.swift */; };
+		DA64A62825385F1800EEEB08 /* PartnerDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64A62725385F1800EEEB08 /* PartnerDetails.storyboard */; };
+		DA64A62B25385F2A00EEEB08 /* PartnerDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64A62A25385F2A00EEEB08 /* PartnerDetailsController.swift */; };
 		DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */; };
-		DA8943452535EBDA00965C7D /* Reserve.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8943442535EBDA00965C7D /* Reserve.storyboard */; };
 		DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E5AC252DD39D0013C2B6 /* Menu.swift */; };
 		DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA94E5B0252DDB290013C2B6 /* Project.storyboard */; };
 		DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E5B3252DDB490013C2B6 /* ProjectController.swift */; };
@@ -63,8 +67,12 @@
 		DA5ED9E5252F3CDA00B59941 /* TeamDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsController.swift; sourceTree = "<group>"; };
 		DA5ED9EA252F418800B59941 /* ProjectDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsController.swift; sourceTree = "<group>"; };
 		DA5ED9EE252F419E00B59941 /* ProjectDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectDetails.storyboard; sourceTree = "<group>"; };
+		DA64A60F2538573600EEEB08 /* PartnersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersController.swift; sourceTree = "<group>"; };
+		DA64A6122538574A00EEEB08 /* Partners.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Partners.storyboard; sourceTree = "<group>"; };
+		DA64A61A2538580900EEEB08 /* PartnersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersCell.swift; sourceTree = "<group>"; };
+		DA64A62725385F1800EEEB08 /* PartnerDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PartnerDetails.storyboard; sourceTree = "<group>"; };
+		DA64A62A25385F2A00EEEB08 /* PartnerDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsController.swift; sourceTree = "<group>"; };
 		DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		DA8943442535EBDA00965C7D /* Reserve.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reserve.storyboard; sourceTree = "<group>"; };
 		DA94E5AC252DD39D0013C2B6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		DA94E5B0252DDB290013C2B6 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		DA94E5B3252DDB490013C2B6 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
@@ -156,6 +164,26 @@
 			path = ProjectDetails;
 			sourceTree = "<group>";
 		};
+		DA64A60E2538571900EEEB08 /* Partners */ = {
+			isa = PBXGroup;
+			children = (
+				DA64A60F2538573600EEEB08 /* PartnersController.swift */,
+				DA64A6122538574A00EEEB08 /* Partners.storyboard */,
+				DA64A61A2538580900EEEB08 /* PartnersCell.swift */,
+				DA64A62625385F0100EEEB08 /* PartnersDetails */,
+			);
+			path = Partners;
+			sourceTree = "<group>";
+		};
+		DA64A62625385F0100EEEB08 /* PartnersDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DA64A62725385F1800EEEB08 /* PartnerDetails.storyboard */,
+				DA64A62A25385F2A00EEEB08 /* PartnerDetailsController.swift */,
+			);
+			path = PartnersDetails;
+			sourceTree = "<group>";
+		};
 		DA802D37252DFB480089EAE8 /* Conection */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +244,7 @@
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA94E5AC252DD39D0013C2B6 /* Menu.swift */,
 				DA9A2D392534623C00B35831 /* ViewDemo.swift */,
+				DA64A60E2538571900EEEB08 /* Partners */,
 				DA9A2D3D25348BDF00B35831 /* Login  */,
 				DAD686632535C16100E239C7 /* HomePage */,
 				DAC55026252C88C900EE5404 /* Staff */,
@@ -227,7 +256,6 @@
 				DAC5501B252C818500EE5404 /* Team */,
 				DAC5502E252C90FF00EE5404 /* NetWorking */,
 				DAD686602535B79900E239C7 /* textFld.swift */,
-				DA8943442535EBDA00965C7D /* Reserve.storyboard */,
 			);
 			path = Abmstaff;
 			sourceTree = "<group>";
@@ -360,14 +388,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5ED9EF252F419E00B59941 /* ProjectDetails.storyboard in Resources */,
-				DA8943452535EBDA00965C7D /* Reserve.storyboard in Resources */,
 				DAD54227252F55860020CD8F /* Platforms.storyboard in Resources */,
+				DA64A62825385F1800EEEB08 /* PartnerDetails.storyboard in Resources */,
 				DAD686652535C17200E239C7 /* Home.storyboard in Resources */,
 				DA94EF6A2525D41A00177EF7 /* LaunchScreen.storyboard in Resources */,
 				DA94EF672525D41A00177EF7 /* Assets.xcassets in Resources */,
 				DA5ED9E3252F3CC000B59941 /* TeamDetails.storyboard in Resources */,
 				DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */,
 				DA5ED9D4252F270D00B59941 /* StaffDetails.storyboard in Resources */,
+				DA64A6132538574A00EEEB08 /* Partners.storyboard in Resources */,
 				DACB33B12537311800CD1CE9 /* Team.storyboard in Resources */,
 				DA94EF652525D41900177EF7 /* Main.storyboard in Resources */,
 				DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */,
@@ -430,7 +459,9 @@
 				DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */,
 				DA305B5B25260341007ED275 /* UserController.swift in Sources */,
 				DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */,
+				DA64A61B2538580900EEEB08 /* PartnersCell.swift in Sources */,
 				DA5ED9E6252F3CDA00B59941 /* TeamDetailsController.swift in Sources */,
+				DA64A6102538573600EEEB08 /* PartnersController.swift in Sources */,
 				DAC55016252C7FEC00EE5404 /* TeamViewController.swift in Sources */,
 				DA94E5B7252DDB810013C2B6 /* ProjectCell.swift in Sources */,
 				DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */,
@@ -439,6 +470,7 @@
 				DA94EF622525D41900177EF7 /* ViewController.swift in Sources */,
 				DAD686682535C18200E239C7 /* HomeViewController.swift in Sources */,
 				DA94EF5E2525D41900177EF7 /* AppDelegate.swift in Sources */,
+				DA64A62B25385F2A00EEEB08 /* PartnerDetailsController.swift in Sources */,
 				DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */,
 				DAD686612535B79900E239C7 /* textFld.swift in Sources */,
 				DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */,

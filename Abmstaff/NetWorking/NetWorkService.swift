@@ -10,8 +10,8 @@ import Alamofire
 
 
 class NetWorkService {
-    static let baseUrl = "https://api.abmstaff.com/api/"
-    static let alamofireSessionMeneger = Alamofire.Session.default
+   private static let baseUrl = "https://api.abmstaff.com/api/"
+   private static let alamofireSessionMeneger = Alamofire.Session.default
     
     class func getHeaders() -> HTTPHeaders? {
         if let token = UserDefaults.standard.value(forKey: "token") as? String {
@@ -26,11 +26,13 @@ class NetWorkService {
                 print(data)
                 do {
                     let json = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-                    let responseData = try JSONDecoder().decode(Response<T>.self, from: json)
-                    if responseData.success {
-                        complition(responseData.data)
+                    let responseData = try JSONDecoder().decode(Response<T?>.self, from: json)
+                    if responseData.success, let data = responseData.data {
+                        complition(data)
                     } else {
-                        print(responseData.messages.first?.value)
+                        if let message = responseData.messages.first?.value {
+                            self.showAlert(title: message)
+                        }
                     }
                     
                 } catch {
@@ -39,14 +41,16 @@ class NetWorkService {
                 
             case.failure(let error):
                 print(error.localizedDescription)
+                self.showAlert(title: error.localizedDescription)
                 
             }
         }
     }
-   private class func showAlert() {
-        let alert = UIAlertController(title: "Password or Email is incorrect", message: nil, preferredStyle: .alert)
+    private class func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(alertAction)
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
 }

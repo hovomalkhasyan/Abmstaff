@@ -15,7 +15,7 @@ struct Response<T:Codable>: Codable {
 
 struct Message: Codable {
     let key: Int
-    let value: String
+    let value: String?
 }
 
 struct DataList: Codable {
@@ -180,7 +180,7 @@ struct Platforms: Codable {
 
 // MARK: - Partners
 
-struct Datum: Codable {
+struct Partners: Codable {
     let id: Int
     let companyName: String
     let logo: String?
@@ -192,7 +192,7 @@ struct PartnerDetails: Codable {
     let instagramLink, facebookLink, fax: String?
     let country: String
     let city, address, timezone: String?
-    let email: String
+    let email: String?
     let projects: [PartnerProject]
     let id: Int
     let companyName: String

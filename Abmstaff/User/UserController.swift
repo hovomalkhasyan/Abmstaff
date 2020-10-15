@@ -59,6 +59,9 @@ class UserController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    @IBAction func swipeMenu(_ sender: UISwipeGestureRecognizer) {
+        present(self.menu!, animated: true)
+    }
     
 }
 
