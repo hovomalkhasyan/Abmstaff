@@ -71,10 +71,10 @@ struct ProjectList: Codable {
 struct UserDetailsId: Codable {
     let fatherName: String?
     let accountNumber : String?
-    let phone: String
+    let phone: String?
     let address: String?
     let gender: Int
-    let dateOfBirth : String
+    let dateOfBirth : String?
     let employeeDate : String?
     let blockDate: String?
     let email: String

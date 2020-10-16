@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if UserDefaults.standard.value(forKey: "token") != nil {
             if let windowScene = scene as? UIWindowScene {
@@ -24,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
             }
         }
-        
+        window?.overrideUserInterfaceStyle = .light
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     private let urlEndpoint = "User/Login"
     
     // MARK: - IBOutlets
-    
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTF: UITextField!
@@ -62,6 +62,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerNotifications()
+
     }
     
     private func setupTextFields() {
@@ -172,12 +173,15 @@ class ViewController: UIViewController {
 
 // MARK: - TextFieldDelegate
 extension ViewController: UITextFieldDelegate {
+  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if textField == loginTF {
+        switch textField {
+        case loginTF:
             passwordTF.becomeFirstResponder()
-        } else if textField == passwordTF {
+        case passwordTF:
             self.view.endEditing(true)
+        default:
+          break
         }
         
         return true

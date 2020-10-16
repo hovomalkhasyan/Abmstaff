@@ -52,5 +52,16 @@ class NetWorkService {
         alert.addAction(alertAction)
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
+    class func downloadImages(imageURL: String, Image: UIImageView) {
+
+        NetWorkService.alamofireSessionMeneger.request(imageURL, method: .get)
+            .validate()
+            .responseData(completionHandler: { (responseData) in
+                Image.image = UIImage(data: responseData.data!)
+                DispatchQueue.main.async {
+                    // Refresh you views
+                }
+            })
+    }
     
 }

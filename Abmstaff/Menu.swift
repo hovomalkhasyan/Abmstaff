@@ -28,29 +28,41 @@ class MenuListController : UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "navigation")
             UIApplication.shared.windows.first?.rootViewController = newVC
-        } else if indexPath.row == 1 {
+        case 1:
             let staffStory = UIStoryboard(name: "Staff", bundle: nil).instantiateViewController(identifier: "StaffController")
             navigationController?.pushViewController(staffStory, animated: true)
-        }else if indexPath.row == 2 {
+        case 2:
             let teamStory = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TeamViewController")
             navigationController?.pushViewController(teamStory, animated: true)
-        }else if indexPath.row == 3 {
+        case 3:
             let projectStory = UIStoryboard(name: "Project", bundle: nil).instantiateViewController(identifier: "ProjectController")
             navigationController?.pushViewController(projectStory, animated: true)
-        }else if indexPath.row == 4 {
+        case 4:
             let partnersStory = UIStoryboard(name: "Partners", bundle: nil).instantiateViewController(identifier: "PartnersController")
             navigationController?.pushViewController(partnersStory, animated: true)
-        }else if indexPath.row == 5 {
+        case 5:
             let settingsStory = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(identifier: "SettingsController")
             navigationController?.pushViewController(settingsStory, animated: true)
-        }else if indexPath.row == 6 {
+        case 6:
+            showAlert()
+        default:
+            break
+        }
+    }
+    private func showAlert() {
+        let alert = UIAlertController(title: "Log Out", message: "Are you sure want to log out ?", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Log Out", style: .default) { (alert) in
             let loginStory = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController")
             UIApplication.shared.windows.first?.rootViewController = loginStory
             UserDefaults.standard.removeObject(forKey: "token")
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
-    
 }

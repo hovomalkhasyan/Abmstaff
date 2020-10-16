@@ -16,12 +16,12 @@ class HomeViewController: UIViewController {
     }
     
     func stackView() {
-        for v in stack.subviews {
-            v.layer.shadowColor = UIColor.gray.cgColor
-            v.layer.shadowRadius = 5
-            v.layer.shadowOpacity = 1
-            v.layer.shadowOffset = .zero
-            v.layer.cornerRadius = 10
+        for view in stack.subviews {
+            view.layer.shadowColor = UIColor.gray.cgColor
+            view.layer.shadowRadius = 5
+            view.layer.shadowOpacity = 1
+            view.layer.shadowOffset = .zero
+            view.layer.cornerRadius = 10
         }
     }
 

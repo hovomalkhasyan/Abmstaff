@@ -49,6 +49,7 @@ extension StaffController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(newVC, animated: true)
     }
     
+    
 }
 
 extension UIImageView {
