@@ -40,6 +40,7 @@ class UserController: UIViewController {
             self.phone.text = response.phone
             self.employe.text = response.employeeDate
             self.adress.text = response.address
+            
         }
         sideMenuSetups()
        
@@ -52,7 +53,6 @@ class UserController: UIViewController {
     private func sideMenuSetups() {
         menu = SideMenuNavigationController(rootViewController: menuListController)
         menu?.leftSide = true
-        self.title = "Abmstaf"
         let newBtn = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(leftButton))
         self.navigationItem.leftBarButtonItem = newBtn
         self.navigationItem.leftItemsSupplementBackButton = true
@@ -65,3 +65,32 @@ class UserController: UIViewController {
     
 }
 
+extension String {
+
+  //MARK:- Convert UTC To Local Date by passing date formats value
+  func UTCToLocal(incomingFormat: String, outGoingFormat: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = incomingFormat
+    dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+
+    let dt = dateFormatter.date(from: self)
+    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.dateFormat = outGoingFormat
+
+    return dateFormatter.string(from: dt ?? Date())
+  }
+
+  //MARK:- Convert Local To UTC Date by passing date formats value
+  func localToUTC(incomingFormat: String, outGoingFormat: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = incomingFormat
+    dateFormatter.calendar = NSCalendar.current
+    dateFormatter.timeZone = TimeZone.current
+
+    let dt = dateFormatter.date(from: self)
+    dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+    dateFormatter.dateFormat = outGoingFormat
+
+    return dateFormatter.string(from: dt ?? Date())
+  }
+}

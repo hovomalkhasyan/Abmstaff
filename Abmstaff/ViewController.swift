@@ -33,11 +33,14 @@ class ViewController: UIViewController {
                 signIn.text = "FORGOT PASSWORD"
                 signUpBtn.setTitle("Next", for: .normal)
                 passwordTF.isHidden = true
+                loginTF.text = ""
                 signInMessage.text = "To reset your password type your email"
                 forgotPass.setTitle("Sign In", for: .normal)
                 passwordShowbtn.isHidden = true
             } else {
                 signIn.text = "SIGN IN"
+                passwordTF.text = ""
+                loginTF.text = ""
                 signUpBtn.setTitle("Sign In", for: .normal)
                 passwordTF.isHidden = false
                 signInMessage.text = "Sign in with your email"
@@ -173,15 +176,17 @@ class ViewController: UIViewController {
 
 // MARK: - TextFieldDelegate
 extension ViewController: UITextFieldDelegate {
-  
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case loginTF:
             passwordTF.becomeFirstResponder()
         case passwordTF:
-            self.view.endEditing(true)
+            UIView.animate(withDuration: 1) {
+                self.view.endEditing(true)
+            }
         default:
-          break
+            break
         }
         
         return true

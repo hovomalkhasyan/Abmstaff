@@ -11,6 +11,8 @@
 		DA1D912F252DE7CE00AB4ADA /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1D912E252DE7CE00AB4ADA /* User.storyboard */; };
 		DA305B5B25260341007ED275 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA305B5A25260341007ED275 /* UserController.swift */; };
 		DA305B5E2526050C007ED275 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA305B5D2526050C007ED275 /* UsersCell.swift */; };
+		DA51111E253DB8FD00F67C7A /* TeamDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51111D253DB8FD00F67C7A /* TeamDetailsCell.swift */; };
+		DA511121253DBE3900F67C7A /* TeamProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA511120253DBE3900F67C7A /* TeamProjectCell.swift */; };
 		DA5ED9D1252F26CE00B59941 /* StaffDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5ED9D0252F26CE00B59941 /* StaffDetailsController.swift */; };
 		DA5ED9D4252F270D00B59941 /* StaffDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5ED9D3252F270D00B59941 /* StaffDetails.storyboard */; };
 		DA5ED9E3252F3CC000B59941 /* TeamDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5ED9E2252F3CC000B59941 /* TeamDetails.storyboard */; };
@@ -38,12 +40,9 @@
 		DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D392534623C00B35831 /* ViewDemo.swift */; };
 		DA9A2D3F25348C0600B35831 /* EnterCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */; };
 		DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9A2D4625348C3000B35831 /* Login.storyboard */; };
-		DAC55016252C7FEC00EE5404 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55015252C7FEC00EE5404 /* TeamViewController.swift */; };
-		DAC55019252C816F00EE5404 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55018252C816F00EE5404 /* TeamCell.swift */; };
 		DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55020252C88AF00EE5404 /* StaffController.swift */; };
 		DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC55023252C88C500EE5404 /* Staff.storyboard */; };
 		DAC55029252C895200EE5404 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55028252C895200EE5404 /* StaffCell.swift */; };
-		DACB33B12537311800CD1CE9 /* Team.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACB33B02537311800CD1CE9 /* Team.storyboard */; };
 		DAD54212252F49C90020CD8F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD54211252F49C90020CD8F /* Settings.storyboard */; };
 		DAD54215252F49DD0020CD8F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54214252F49DD0020CD8F /* SettingsController.swift */; };
 		DAD54219252F4AE70020CD8F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54218252F4AE70020CD8F /* SettingsCell.swift */; };
@@ -53,6 +52,7 @@
 		DAD686612535B79900E239C7 /* textFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD686602535B79900E239C7 /* textFld.swift */; };
 		DAD686652535C17200E239C7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD686642535C17200E239C7 /* Home.storyboard */; };
 		DAD686682535C18200E239C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD686672535C18200E239C7 /* HomeViewController.swift */; };
+		DADE1E3B253D79DC00B62693 /* TeamCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE1E3A253D79DC00B62693 /* TeamCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +61,8 @@
 		DA1D912E252DE7CE00AB4ADA /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		DA305B5A25260341007ED275 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		DA305B5D2526050C007ED275 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
+		DA51111D253DB8FD00F67C7A /* TeamDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsCell.swift; sourceTree = "<group>"; };
+		DA511120253DBE3900F67C7A /* TeamProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProjectCell.swift; sourceTree = "<group>"; };
 		DA5ED9D0252F26CE00B59941 /* StaffDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetailsController.swift; sourceTree = "<group>"; };
 		DA5ED9D3252F270D00B59941 /* StaffDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StaffDetails.storyboard; sourceTree = "<group>"; };
 		DA5ED9E2252F3CC000B59941 /* TeamDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamDetails.storyboard; sourceTree = "<group>"; };
@@ -90,12 +92,9 @@
 		DA9A2D392534623C00B35831 /* ViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDemo.swift; sourceTree = "<group>"; };
 		DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeController.swift; sourceTree = "<group>"; };
 		DA9A2D4625348C3000B35831 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		DAC55015252C7FEC00EE5404 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
-		DAC55018252C816F00EE5404 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		DAC55020252C88AF00EE5404 /* StaffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffController.swift; sourceTree = "<group>"; };
 		DAC55023252C88C500EE5404 /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
 		DAC55028252C895200EE5404 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffCell.swift; sourceTree = "<group>"; };
-		DACB33B02537311800CD1CE9 /* Team.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Team.storyboard; sourceTree = "<group>"; };
 		DAD54211252F49C90020CD8F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		DAD54214252F49DD0020CD8F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		DAD54218252F4AE70020CD8F /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		DAD686602535B79900E239C7 /* textFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFld.swift; sourceTree = "<group>"; };
 		DAD686642535C17200E239C7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DAD686672535C18200E239C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DADE1E3A253D79DC00B62693 /* TeamCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCells.swift; sourceTree = "<group>"; };
 		F4ED880AB4D1228E146BC331 /* Pods-Abmstaff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abmstaff.release.xcconfig"; path = "Target Support Files/Pods-Abmstaff/Pods-Abmstaff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +151,8 @@
 			children = (
 				DA5ED9E2252F3CC000B59941 /* TeamDetails.storyboard */,
 				DA5ED9E5252F3CDA00B59941 /* TeamDetailsController.swift */,
+				DA51111D253DB8FD00F67C7A /* TeamDetailsCell.swift */,
+				DA511120253DBE3900F67C7A /* TeamProjectCell.swift */,
 			);
 			path = TeamDetails;
 			sourceTree = "<group>";
@@ -253,7 +255,6 @@
 				DA94E5B9252DE1300013C2B6 /* User */,
 				DA802D37252DFB480089EAE8 /* Conection */,
 				DA94E5AF252DDB150013C2B6 /* Projects */,
-				DAC5501B252C818500EE5404 /* Team */,
 				DAC5502E252C90FF00EE5404 /* NetWorking */,
 				DAD686602535B79900E239C7 /* textFld.swift */,
 			);
@@ -269,23 +270,14 @@
 			path = "Login ";
 			sourceTree = "<group>";
 		};
-		DAC5501B252C818500EE5404 /* Team */ = {
-			isa = PBXGroup;
-			children = (
-				DAC55015252C7FEC00EE5404 /* TeamViewController.swift */,
-				DAC55018252C816F00EE5404 /* TeamCell.swift */,
-				DACB33B02537311800CD1CE9 /* Team.storyboard */,
-				DA5ED9E1252F3CA500B59941 /* TeamDetails */,
-			);
-			path = Team;
-			sourceTree = "<group>";
-		};
 		DAC55026252C88C900EE5404 /* Staff */ = {
 			isa = PBXGroup;
 			children = (
+				DA5ED9E1252F3CA500B59941 /* TeamDetails */,
 				DA5ED9D6252F272200B59941 /* StaffDetails */,
 				DAC55023252C88C500EE5404 /* Staff.storyboard */,
 				DAC55028252C895200EE5404 /* StaffCell.swift */,
+				DADE1E3A253D79DC00B62693 /* TeamCells.swift */,
 				DAC55020252C88AF00EE5404 /* StaffController.swift */,
 			);
 			path = Staff;
@@ -397,7 +389,6 @@
 				DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */,
 				DA5ED9D4252F270D00B59941 /* StaffDetails.storyboard in Resources */,
 				DA64A6132538574A00EEEB08 /* Partners.storyboard in Resources */,
-				DACB33B12537311800CD1CE9 /* Team.storyboard in Resources */,
 				DA94EF652525D41900177EF7 /* Main.storyboard in Resources */,
 				DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */,
 				DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */,
@@ -459,10 +450,10 @@
 				DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */,
 				DA305B5B25260341007ED275 /* UserController.swift in Sources */,
 				DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */,
+				DA511121253DBE3900F67C7A /* TeamProjectCell.swift in Sources */,
 				DA64A61B2538580900EEEB08 /* PartnersCell.swift in Sources */,
 				DA5ED9E6252F3CDA00B59941 /* TeamDetailsController.swift in Sources */,
 				DA64A6102538573600EEEB08 /* PartnersController.swift in Sources */,
-				DAC55016252C7FEC00EE5404 /* TeamViewController.swift in Sources */,
 				DA94E5B7252DDB810013C2B6 /* ProjectCell.swift in Sources */,
 				DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */,
 				DA5ED9D1252F26CE00B59941 /* StaffDetailsController.swift in Sources */,
@@ -476,13 +467,14 @@
 				DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */,
 				DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */,
 				DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */,
+				DA51111E253DB8FD00F67C7A /* TeamDetailsCell.swift in Sources */,
 				DAD54219252F4AE70020CD8F /* SettingsCell.swift in Sources */,
 				DA9A2D3F25348C0600B35831 /* EnterCodeController.swift in Sources */,
 				DA305B5E2526050C007ED275 /* UsersCell.swift in Sources */,
 				DAD54215252F49DD0020CD8F /* SettingsController.swift in Sources */,
 				DA94EF602525D41900177EF7 /* SceneDelegate.swift in Sources */,
-				DAC55019252C816F00EE5404 /* TeamCell.swift in Sources */,
 				DAD5422A252F559B0020CD8F /* PlatformsController.swift in Sources */,
+				DADE1E3B253D79DC00B62693 /* TeamCells.swift in Sources */,
 				DAC55029252C895200EE5404 /* StaffCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

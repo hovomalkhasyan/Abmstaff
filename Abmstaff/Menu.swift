@@ -10,7 +10,7 @@ import SideMenu
  
 class MenuListController : UITableViewController {
     
-    var modeArray = ["Home", "Staff", "Team", "Projects", "Partners", "Settings", "Logout"]
+    var modeArray = ["Home", "Staff", "Projects", "Partners", "Settings", "Logout"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -36,18 +36,15 @@ class MenuListController : UITableViewController {
             let staffStory = UIStoryboard(name: "Staff", bundle: nil).instantiateViewController(identifier: "StaffController")
             navigationController?.pushViewController(staffStory, animated: true)
         case 2:
-            let teamStory = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TeamViewController")
-            navigationController?.pushViewController(teamStory, animated: true)
-        case 3:
             let projectStory = UIStoryboard(name: "Project", bundle: nil).instantiateViewController(identifier: "ProjectController")
             navigationController?.pushViewController(projectStory, animated: true)
-        case 4:
+        case 3:
             let partnersStory = UIStoryboard(name: "Partners", bundle: nil).instantiateViewController(identifier: "PartnersController")
             navigationController?.pushViewController(partnersStory, animated: true)
-        case 5:
+        case 4:
             let settingsStory = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(identifier: "SettingsController")
             navigationController?.pushViewController(settingsStory, animated: true)
-        case 6:
+        case 5:
             showAlert()
         default:
             break

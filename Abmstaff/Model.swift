@@ -121,6 +121,9 @@ struct Member: Codable {
     let id: Int
     let firstName, lastName: String
     let profilePhoto: String?
+    var fullName : String {
+        return firstName + " " + lastName
+    }
 }
 struct TeamProject: Codable {
     let id: Int
@@ -204,4 +207,26 @@ struct PartnerProject: Codable {
     let id: Int
     let name: String
     let image: String?
+}
+// MARK: - AllStaffDetails
+struct AllStaffDetails : Codable {
+    let fatherName, accountNumber, phone, address: String?
+    let gender: Int?
+    let dateOfBirth, employeeDate: String?
+    let email: String
+    let gitLabID, roleID: Int?
+    let linkedinLink, instagramLink: String?
+    let facebookLink: String?
+    let note: String?
+    let secondPhone: String?
+    let careerStartDate: String?
+    let teamID, positionID: Int?
+    let technologies: [Int]
+    let id: Int
+    let firstName, lastName: String
+    let profilePhoto: String?
+    
+    var fullName: String{
+        return firstName + " " + lastName
+    }
 }

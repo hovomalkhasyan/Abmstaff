@@ -9,6 +9,8 @@ import UIKit
 
 class TeamProjectCell: UITableViewCell {
 
+    @IBOutlet weak var teamImage: UIImageView!
+    @IBOutlet weak var teamName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

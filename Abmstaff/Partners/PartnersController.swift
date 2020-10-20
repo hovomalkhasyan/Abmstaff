@@ -36,6 +36,7 @@ extension PartnersController: UITableViewDelegate, UITableViewDataSource {
         if let urlImage = partners[indexPath.row].logo, let url = URL(string: urlImage) {
             cell.partnersAvatar.load(url: url)
         }
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
     
