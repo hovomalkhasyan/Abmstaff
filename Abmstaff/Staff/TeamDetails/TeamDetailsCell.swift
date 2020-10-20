@@ -1,17 +1,14 @@
 //
-//  TeamCell.swift
+//  TeamDetailsCell.swift
 //  Abmstaff
 //
-//  Created by Hovo on 10/6/20.
+//  Created by Hovo on 10/19/20.
 //
 
 import UIKit
 
-class TeamCell: UITableViewCell {
+class TeamDetailsCell: UITableViewCell {
 
-    @IBOutlet weak var projectCount: UILabel!
-    @IBOutlet weak var teamName: UILabel!
-    @IBOutlet weak var membersCount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
