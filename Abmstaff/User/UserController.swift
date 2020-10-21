@@ -32,7 +32,7 @@ class UserController: UIViewController {
         NetWorkService.request(url: userDet, method: .get, param: nil, encoding: JSONEncoding.default) { (response: DataList) in
             self.nameLabel.text = response.firstName
             self.lastNameLbl.text = response.lastName
-            self.dateBirth.text = response.dateOfBirth
+            self.dateBirth.text = response.dateOfBirth.UTCToLocal(incomingFormat:"yyyy-MM-dd H:mm:ss", outGoingFormat: "MM/dd/yyyy")
             self.email.text = response.email
             self.team.text = response.team
             self.fatherName.text = response.fatherName
@@ -67,7 +67,6 @@ class UserController: UIViewController {
 
 extension String {
 
-  //MARK:- Convert UTC To Local Date by passing date formats value
   func UTCToLocal(incomingFormat: String, outGoingFormat: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = incomingFormat
@@ -80,7 +79,6 @@ extension String {
     return dateFormatter.string(from: dt ?? Date())
   }
 
-  //MARK:- Convert Local To UTC Date by passing date formats value
   func localToUTC(incomingFormat: String, outGoingFormat: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = incomingFormat

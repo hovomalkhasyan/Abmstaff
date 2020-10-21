@@ -9,6 +9,7 @@ import UIKit
 
 class StaffCell: UITableViewCell {
 
+    @IBOutlet weak var phoneImage: UIImageView!
     @IBOutlet weak var userView: UIView!
     @IBOutlet weak var userLastName: UILabel!
     @IBOutlet weak var userAvatar: UIImageView!

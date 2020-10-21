@@ -11,7 +11,8 @@ import Alamofire
 class StaffDetailsController: UIViewController {
     var edpoint = "User/StaffDetails/"
     var id = 0
-    @IBOutlet weak var userName: UILabel!
+    var phoneNumber = ""
+    @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var lastName: UILabel!
     @IBOutlet weak var email: UILabel!
@@ -20,8 +21,8 @@ class StaffDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NetWorkService.request(url: edpoint + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: UserDetailsId ) in
-            self.userName.text = response.firstName
-            self.lastName.text = response.lastName
+            self.callButton.setTitle(response.phone, for: .normal)
+            self.lastName.text = response.fullName
             self.email.text = response.email
             self.team.text = response.team
             self.date.text = response.dateOfBirth
@@ -29,5 +30,10 @@ class StaffDetailsController: UIViewController {
                 self.avatar.load(url: url)
             }
         }
+    }
+    
+    @IBAction func callNumber(_ sender: UIButton) {
+        guard let number = URL(string: "tel://" + phoneNumber) else { return }
+        UIApplication.shared.open(number)
     }
 }

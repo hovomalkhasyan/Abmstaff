@@ -10,7 +10,6 @@ import Alamofire
 
 class TeamDetailsController: UIViewController {
     @IBOutlet weak var segmentContoll: UISegmentedControl!
-    
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var membersTableView: UITableView!
     var detailsEndPoint = "Team/Details/"
@@ -54,14 +53,14 @@ class TeamDetailsController: UIViewController {
 extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if segmentContoll.selectedSegmentIndex == 0 && tableView == membersTableView{
+        if tableView == self.membersTableView{
             return members.count
         }else {
             return teamProject.count
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if segmentContoll.selectedSegmentIndex == 0 && tableView == membersTableView {
+        if tableView == self.membersTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TeamDetailsCell", for: indexPath) as! TeamDetailsCell
             cell.userName.text = members[indexPath.row].fullName
             cell.position.text = members[indexPath.row].position
@@ -77,6 +76,17 @@ extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
                 cell.teamImage.load(url: url)
             }
             return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.membersTableView  {
+            let newVC = UIStoryboard(name: "StaffDetails", bundle: nil).instantiateViewController(identifier: "StaffDetailsController") as! StaffDetailsController
+            navigationController?.pushViewController(newVC, animated: true)
+            newVC.id = members[indexPath.row].id
+        }else {
+            let detailsVC = UIStoryboard(name: "ProjectDetails", bundle: nil).instantiateViewController(identifier: "ProjectDetailsController") as! ProjectDetailsController
+            navigationController?.pushViewController(detailsVC, animated: true)
+            detailsVC.id = teamProject[indexPath.row].id
         }
     }
 }

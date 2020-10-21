@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-5d-Icr">
-                                <rect key="frame" x="110" y="172" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-MB-8jc">
                                 <rect key="frame" x="157" y="64" width="100" height="100"/>
                                 <constraints>
@@ -34,12 +28,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgW-30-8WS">
-                                <rect key="frame" x="278" y="172" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liD-wY-7Sa">
                                 <rect key="frame" x="0.0" y="201" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -83,20 +71,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgW-30-8WS">
+                                <rect key="frame" x="189" y="172" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie4-ZU-5Ld">
+                                <rect key="frame" x="10" y="324" width="28" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-8w-xrJ">
+                                <rect key="frame" x="110" y="321" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="callNumber:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="Xs2-uC-hsd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5os-Pv-1Hh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Asq-6l-ugV" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" constant="10" id="24a-MJ-Kf0"/>
                             <constraint firstItem="Fcf-s2-1A0" firstAttribute="top" secondItem="H8Z-3o-ZUy" secondAttribute="bottom" constant="20" id="5C9-w0-h4H"/>
-                            <constraint firstItem="GBz-5d-Icr" firstAttribute="top" secondItem="MlC-MB-8jc" secondAttribute="bottom" constant="8" symbolic="YES" id="93Y-qX-rQ3"/>
                             <constraint firstItem="Hqv-dg-T22" firstAttribute="leading" secondItem="H8Z-3o-ZUy" secondAttribute="trailing" constant="59" id="9fd-Zk-ka3"/>
                             <constraint firstItem="MlC-MB-8jc" firstAttribute="top" secondItem="5os-Pv-1Hh" secondAttribute="top" constant="20" id="DaZ-sE-ISR"/>
                             <constraint firstItem="Hqv-dg-T22" firstAttribute="top" secondItem="vQU-GJ-2je" secondAttribute="bottom" constant="20" id="M7y-ux-gyv"/>
-                            <constraint firstItem="GBz-5d-Icr" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" constant="110" id="POP-yq-E07"/>
+                            <constraint firstItem="QgW-30-8WS" firstAttribute="top" secondItem="MlC-MB-8jc" secondAttribute="bottom" constant="8" id="Nd3-Wa-DBw"/>
                             <constraint firstItem="liD-wY-7Sa" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" id="S2z-Jh-AFc"/>
-                            <constraint firstItem="5os-Pv-1Hh" firstAttribute="trailing" secondItem="QgW-30-8WS" secondAttribute="trailing" constant="100" id="SnJ-xn-KHO"/>
-                            <constraint firstItem="QgW-30-8WS" firstAttribute="top" secondItem="MlC-MB-8jc" secondAttribute="bottom" constant="8" symbolic="YES" id="b8N-cj-5ja"/>
+                            <constraint firstItem="QgW-30-8WS" firstAttribute="centerX" secondItem="Zop-sj-6Lg" secondAttribute="centerX" id="VT9-0w-8m2"/>
+                            <constraint firstItem="cFq-8w-xrJ" firstAttribute="top" secondItem="KGd-OH-FO0" secondAttribute="bottom" constant="8" symbolic="YES" id="XgP-OQ-0MV"/>
                             <constraint firstItem="Asq-6l-ugV" firstAttribute="top" secondItem="liD-wY-7Sa" secondAttribute="bottom" constant="10" id="bIh-rh-3LO"/>
                             <constraint firstItem="5os-Pv-1Hh" firstAttribute="trailing" secondItem="liD-wY-7Sa" secondAttribute="trailing" id="bXk-8u-Y6n"/>
                             <constraint firstItem="vQU-GJ-2je" firstAttribute="leading" secondItem="Asq-6l-ugV" secondAttribute="trailing" constant="60" id="cVY-vO-Qsv"/>
@@ -104,19 +110,22 @@
                             <constraint firstItem="vQU-GJ-2je" firstAttribute="top" secondItem="liD-wY-7Sa" secondAttribute="bottom" constant="8" symbolic="YES" id="eod-8H-T9u"/>
                             <constraint firstItem="H8Z-3o-ZUy" firstAttribute="top" secondItem="Asq-6l-ugV" secondAttribute="bottom" constant="20" id="etb-ky-UZv"/>
                             <constraint firstItem="KGd-OH-FO0" firstAttribute="leading" secondItem="Fcf-s2-1A0" secondAttribute="trailing" constant="8" symbolic="YES" id="hSJ-pB-mPn"/>
-                            <constraint firstItem="liD-wY-7Sa" firstAttribute="top" secondItem="GBz-5d-Icr" secondAttribute="bottom" constant="8" symbolic="YES" id="qAi-u0-Fte"/>
+                            <constraint firstItem="liD-wY-7Sa" firstAttribute="top" secondItem="QgW-30-8WS" secondAttribute="bottom" constant="8" symbolic="YES" id="pC5-EJ-M2X"/>
+                            <constraint firstItem="ie4-ZU-5Ld" firstAttribute="top" secondItem="Fcf-s2-1A0" secondAttribute="bottom" constant="10" id="pEP-nX-DM0"/>
+                            <constraint firstItem="cFq-8w-xrJ" firstAttribute="leading" secondItem="ie4-ZU-5Ld" secondAttribute="trailing" constant="72" id="wuY-tQ-9Oc"/>
                             <constraint firstItem="MlC-MB-8jc" firstAttribute="centerX" secondItem="Zop-sj-6Lg" secondAttribute="centerX" id="x5z-Ti-bC3"/>
                             <constraint firstItem="H8Z-3o-ZUy" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" constant="10" id="xgW-ZB-xiN"/>
+                            <constraint firstItem="ie4-ZU-5Ld" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" constant="10" id="y8T-yB-VNb"/>
                             <constraint firstItem="KGd-OH-FO0" firstAttribute="top" secondItem="Hqv-dg-T22" secondAttribute="bottom" constant="20" id="yGK-kH-V5s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="avatar" destination="MlC-MB-8jc" id="ibz-3v-iai"/>
+                        <outlet property="callButton" destination="cFq-8w-xrJ" id="IN2-bB-VZX"/>
                         <outlet property="date" destination="KGd-OH-FO0" id="fsU-YW-TOM"/>
                         <outlet property="email" destination="vQU-GJ-2je" id="LGN-ij-uPO"/>
                         <outlet property="lastName" destination="QgW-30-8WS" id="Q41-Xe-gWY"/>
                         <outlet property="team" destination="Hqv-dg-T22" id="bcK-kk-vq7"/>
-                        <outlet property="userName" destination="GBz-5d-Icr" id="vH9-ii-P08"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmr-Qb-oPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

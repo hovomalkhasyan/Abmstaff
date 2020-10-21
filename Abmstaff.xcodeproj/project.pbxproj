@@ -172,7 +172,6 @@
 				DA64A60F2538573600EEEB08 /* PartnersController.swift */,
 				DA64A6122538574A00EEEB08 /* Partners.storyboard */,
 				DA64A61A2538580900EEEB08 /* PartnersCell.swift */,
-				DA64A62625385F0100EEEB08 /* PartnersDetails */,
 			);
 			path = Partners;
 			sourceTree = "<group>";
@@ -192,6 +191,16 @@
 				DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */,
 			);
 			path = Conection;
+			sourceTree = "<group>";
+		};
+		DA815A48253F0D910057CA6F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				DA64A62625385F0100EEEB08 /* PartnersDetails */,
+				DA5ED9D6252F272200B59941 /* StaffDetails */,
+				DA5ED9E1252F3CA500B59941 /* TeamDetails */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		DA94E5AF252DDB150013C2B6 /* Projects */ = {
@@ -246,6 +255,7 @@
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA94E5AC252DD39D0013C2B6 /* Menu.swift */,
 				DA9A2D392534623C00B35831 /* ViewDemo.swift */,
+				DA815A48253F0D910057CA6F /* Details */,
 				DA64A60E2538571900EEEB08 /* Partners */,
 				DA9A2D3D25348BDF00B35831 /* Login  */,
 				DAD686632535C16100E239C7 /* HomePage */,
@@ -273,8 +283,6 @@
 		DAC55026252C88C900EE5404 /* Staff */ = {
 			isa = PBXGroup;
 			children = (
-				DA5ED9E1252F3CA500B59941 /* TeamDetails */,
-				DA5ED9D6252F272200B59941 /* StaffDetails */,
 				DAC55023252C88C500EE5404 /* Staff.storyboard */,
 				DAC55028252C895200EE5404 /* StaffCell.swift */,
 				DADE1E3A253D79DC00B62693 /* TeamCells.swift */,

@@ -37,6 +37,9 @@ struct DataList: Codable {
     let firstName, lastName: String
     let profilePhoto: String?
     
+    var fullName: String {
+        return firstName + " " + " " + lastName + " " + fatherName
+    }
 }
 
 struct DataClass: Codable {
@@ -92,6 +95,10 @@ struct UserDetailsId: Codable {
     let id: Int
     let firstName, lastName: String
     let profilePhoto: String?
+    
+    var fullName: String {
+        return firstName + " " + " " + lastName 
+    }
 }
 
 struct Project: Codable {
