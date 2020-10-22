@@ -53,20 +53,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQU-GJ-2je">
-                                <rect key="frame" x="109" y="210" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqv-dg-T22">
-                                <rect key="frame" x="110" y="251" width="42" height="21"/>
+                                <rect key="frame" x="110" y="247" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGd-OH-FO0">
-                                <rect key="frame" x="110" y="292" width="42" height="21"/>
+                                <rect key="frame" x="110" y="288" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -84,10 +78,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-8w-xrJ">
-                                <rect key="frame" x="110" y="321" width="46" height="30"/>
+                                <rect key="frame" x="110" y="317" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="callNumber:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="Xs2-uC-hsd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvG-iC-lpr">
+                                <rect key="frame" x="108" y="207" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="WJC-s2-W7g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,18 +97,18 @@
                         <constraints>
                             <constraint firstItem="Asq-6l-ugV" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" constant="10" id="24a-MJ-Kf0"/>
                             <constraint firstItem="Fcf-s2-1A0" firstAttribute="top" secondItem="H8Z-3o-ZUy" secondAttribute="bottom" constant="20" id="5C9-w0-h4H"/>
+                            <constraint firstItem="hvG-iC-lpr" firstAttribute="leading" secondItem="Asq-6l-ugV" secondAttribute="trailing" constant="59" id="7CG-e7-ceR"/>
                             <constraint firstItem="Hqv-dg-T22" firstAttribute="leading" secondItem="H8Z-3o-ZUy" secondAttribute="trailing" constant="59" id="9fd-Zk-ka3"/>
                             <constraint firstItem="MlC-MB-8jc" firstAttribute="top" secondItem="5os-Pv-1Hh" secondAttribute="top" constant="20" id="DaZ-sE-ISR"/>
-                            <constraint firstItem="Hqv-dg-T22" firstAttribute="top" secondItem="vQU-GJ-2je" secondAttribute="bottom" constant="20" id="M7y-ux-gyv"/>
                             <constraint firstItem="QgW-30-8WS" firstAttribute="top" secondItem="MlC-MB-8jc" secondAttribute="bottom" constant="8" id="Nd3-Wa-DBw"/>
                             <constraint firstItem="liD-wY-7Sa" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" id="S2z-Jh-AFc"/>
+                            <constraint firstItem="Hqv-dg-T22" firstAttribute="top" secondItem="hvG-iC-lpr" secondAttribute="bottom" constant="10" id="Uux-RY-lYJ"/>
                             <constraint firstItem="QgW-30-8WS" firstAttribute="centerX" secondItem="Zop-sj-6Lg" secondAttribute="centerX" id="VT9-0w-8m2"/>
                             <constraint firstItem="cFq-8w-xrJ" firstAttribute="top" secondItem="KGd-OH-FO0" secondAttribute="bottom" constant="8" symbolic="YES" id="XgP-OQ-0MV"/>
+                            <constraint firstItem="hvG-iC-lpr" firstAttribute="top" secondItem="liD-wY-7Sa" secondAttribute="bottom" constant="5" id="Xih-X4-c3C"/>
                             <constraint firstItem="Asq-6l-ugV" firstAttribute="top" secondItem="liD-wY-7Sa" secondAttribute="bottom" constant="10" id="bIh-rh-3LO"/>
                             <constraint firstItem="5os-Pv-1Hh" firstAttribute="trailing" secondItem="liD-wY-7Sa" secondAttribute="trailing" id="bXk-8u-Y6n"/>
-                            <constraint firstItem="vQU-GJ-2je" firstAttribute="leading" secondItem="Asq-6l-ugV" secondAttribute="trailing" constant="60" id="cVY-vO-Qsv"/>
                             <constraint firstItem="Fcf-s2-1A0" firstAttribute="leading" secondItem="5os-Pv-1Hh" secondAttribute="leading" constant="10" id="d4r-Yu-Obx"/>
-                            <constraint firstItem="vQU-GJ-2je" firstAttribute="top" secondItem="liD-wY-7Sa" secondAttribute="bottom" constant="8" symbolic="YES" id="eod-8H-T9u"/>
                             <constraint firstItem="H8Z-3o-ZUy" firstAttribute="top" secondItem="Asq-6l-ugV" secondAttribute="bottom" constant="20" id="etb-ky-UZv"/>
                             <constraint firstItem="KGd-OH-FO0" firstAttribute="leading" secondItem="Fcf-s2-1A0" secondAttribute="trailing" constant="8" symbolic="YES" id="hSJ-pB-mPn"/>
                             <constraint firstItem="liD-wY-7Sa" firstAttribute="top" secondItem="QgW-30-8WS" secondAttribute="bottom" constant="8" symbolic="YES" id="pC5-EJ-M2X"/>
@@ -123,7 +124,7 @@
                         <outlet property="avatar" destination="MlC-MB-8jc" id="ibz-3v-iai"/>
                         <outlet property="callButton" destination="cFq-8w-xrJ" id="IN2-bB-VZX"/>
                         <outlet property="date" destination="KGd-OH-FO0" id="fsU-YW-TOM"/>
-                        <outlet property="email" destination="vQU-GJ-2je" id="LGN-ij-uPO"/>
+                        <outlet property="email" destination="hvG-iC-lpr" id="H7h-23-SqS"/>
                         <outlet property="lastName" destination="QgW-30-8WS" id="Q41-Xe-gWY"/>
                         <outlet property="team" destination="Hqv-dg-T22" id="bcK-kk-vq7"/>
                     </connections>

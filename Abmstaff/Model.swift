@@ -38,7 +38,7 @@ struct DataList: Codable {
     let profilePhoto: String?
     
     var fullName: String {
-        return firstName + " " + " " + lastName + " " + fatherName
+        return firstName + " " + " " + lastName 
     }
 }
 
@@ -88,7 +88,7 @@ struct UserDetailsId: Codable {
     let secondPhone, careerStartDate: String?
     let team: String?
     let teamID, positionID: String?
-    let positionName: String
+    let positionName: String?
     let technologies: [Technology]
     let projects : [Project]?
     let files: [String]

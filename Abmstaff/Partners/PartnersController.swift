@@ -23,7 +23,10 @@ class PartnersController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
 }
 extension PartnersController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

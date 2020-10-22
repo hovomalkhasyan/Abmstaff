@@ -24,11 +24,12 @@ class ProjectController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.contentInset.top = 10
     }
-    @objc func addProject() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
-    
 }
 
 extension ProjectController: UITableViewDelegate, UITableViewDataSource {
