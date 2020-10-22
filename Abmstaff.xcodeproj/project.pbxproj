@@ -27,6 +27,7 @@
 		DA64A62825385F1800EEEB08 /* PartnerDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64A62725385F1800EEEB08 /* PartnerDetails.storyboard */; };
 		DA64A62B25385F2A00EEEB08 /* PartnerDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64A62A25385F2A00EEEB08 /* PartnerDetailsController.swift */; };
 		DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */; };
+		DA8812292541D1CA00F5A4F1 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8812282541D1CA00F5A4F1 /* HomePageController.swift */; };
 		DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E5AC252DD39D0013C2B6 /* Menu.swift */; };
 		DA94E5B1252DDB290013C2B6 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA94E5B0252DDB290013C2B6 /* Project.storyboard */; };
 		DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94E5B3252DDB490013C2B6 /* ProjectController.swift */; };
@@ -52,7 +53,10 @@
 		DAD5422A252F559B0020CD8F /* PlatformsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54229252F559B0020CD8F /* PlatformsController.swift */; };
 		DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */; };
 		DAD686612535B79900E239C7 /* textFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD686602535B79900E239C7 /* textFld.swift */; };
-		DAD686682535C18200E239C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD686672535C18200E239C7 /* HomeViewController.swift */; };
+		DAD93D462541EE7D00C6190C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD93D452541EE7D00C6190C /* HomeCell.swift */; };
+		DAD93D4A2541EF3200C6190C /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD93D492541EF3200C6190C /* Header.swift */; };
+		DAD93D4D2541EF4300C6190C /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD93D4C2541EF4300C6190C /* Footer.swift */; };
+		DAD93D502541EF9C00C6190C /* ProjectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD93D4F2541EF9C00C6190C /* ProjectTeam.swift */; };
 		DADE1E3B253D79DC00B62693 /* TeamCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADE1E3A253D79DC00B62693 /* TeamCells.swift */; };
 		DAE22C032541974F00E73C0D /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE22C022541974F00E73C0D /* MoreController.swift */; };
 		DAE22C06254197C900E73C0D /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE22C05254197C900E73C0D /* MoreCell.swift */; };
@@ -82,6 +86,7 @@
 		DA64A62725385F1800EEEB08 /* PartnerDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PartnerDetails.storyboard; sourceTree = "<group>"; };
 		DA64A62A25385F2A00EEEB08 /* PartnerDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailsController.swift; sourceTree = "<group>"; };
 		DA802D3A252DFBAF0089EAE8 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		DA8812282541D1CA00F5A4F1 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		DA94E5AC252DD39D0013C2B6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		DA94E5B0252DDB290013C2B6 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		DA94E5B3252DDB490013C2B6 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
@@ -109,7 +114,10 @@
 		DAD54229252F559B0020CD8F /* PlatformsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformsController.swift; sourceTree = "<group>"; };
 		DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformsCell.swift; sourceTree = "<group>"; };
 		DAD686602535B79900E239C7 /* textFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFld.swift; sourceTree = "<group>"; };
-		DAD686672535C18200E239C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DAD93D452541EE7D00C6190C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		DAD93D492541EF3200C6190C /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		DAD93D4C2541EF4300C6190C /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		DAD93D4F2541EF9C00C6190C /* ProjectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeam.swift; sourceTree = "<group>"; };
 		DADE1E3A253D79DC00B62693 /* TeamCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCells.swift; sourceTree = "<group>"; };
 		DAE22C022541974F00E73C0D /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
 		DAE22C05254197C900E73C0D /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA94E5AC252DD39D0013C2B6 /* Menu.swift */,
 				DA9A2D392534623C00B35831 /* ViewDemo.swift */,
+				DAD93D482541EEF900C6190C /* Home */,
 				DAE22C0C2541AB2C00E73C0D /* TabBarControllers */,
 				DAE22C01254196FF00E73C0D /* More */,
 				DA815A48253F0D910057CA6F /* Details */,
@@ -340,6 +349,17 @@
 			path = HomePage;
 			sourceTree = "<group>";
 		};
+		DAD93D482541EEF900C6190C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DAD93D452541EE7D00C6190C /* HomeCell.swift */,
+				DAD93D492541EF3200C6190C /* Header.swift */,
+				DAD93D4C2541EF4300C6190C /* Footer.swift */,
+				DAD93D4F2541EF9C00C6190C /* ProjectTeam.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		DAE22C01254196FF00E73C0D /* More */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,8 +373,8 @@
 			isa = PBXGroup;
 			children = (
 				DA305B5A25260341007ED275 /* UserController.swift */,
-				DAD686672535C18200E239C7 /* HomeViewController.swift */,
 				DAE22C022541974F00E73C0D /* MoreController.swift */,
+				DA8812282541D1CA00F5A4F1 /* HomePageController.swift */,
 			);
 			path = TabBarControllers;
 			sourceTree = "<group>";
@@ -484,7 +504,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD93D4A2541EF3200C6190C /* Header.swift in Sources */,
+				DAD93D462541EE7D00C6190C /* HomeCell.swift in Sources */,
 				DA5ED9EB252F418800B59941 /* ProjectDetailsController.swift in Sources */,
+				DAD93D4D2541EF4300C6190C /* Footer.swift in Sources */,
 				DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */,
 				DA305B5B25260341007ED275 /* UserController.swift in Sources */,
 				DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */,
@@ -498,15 +521,16 @@
 				DA5ED9D1252F26CE00B59941 /* StaffDetailsController.swift in Sources */,
 				DA94EF792525DAC700177EF7 /* Model.swift in Sources */,
 				DA94EF622525D41900177EF7 /* ViewController.swift in Sources */,
-				DAD686682535C18200E239C7 /* HomeViewController.swift in Sources */,
 				DAE22C0925419F8900E73C0D /* MoreCollectionCell.swift in Sources */,
 				DA94EF5E2525D41900177EF7 /* AppDelegate.swift in Sources */,
 				DA64A62B25385F2A00EEEB08 /* PartnerDetailsController.swift in Sources */,
+				DA8812292541D1CA00F5A4F1 /* HomePageController.swift in Sources */,
 				DAE22C032541974F00E73C0D /* MoreController.swift in Sources */,
 				DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */,
 				DAD686612535B79900E239C7 /* textFld.swift in Sources */,
 				DA94E5AD252DD39D0013C2B6 /* Menu.swift in Sources */,
 				DA2EC571254181B80083BEE7 /* Ext.swift in Sources */,
+				DAD93D502541EF9C00C6190C /* ProjectTeam.swift in Sources */,
 				DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */,
 				DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */,
 				DAE22C182541B55800E73C0D /* TeamViewController.swift in Sources */,
