@@ -9,11 +9,14 @@ import UIKit
 
 class PartnersCell: UITableViewCell {
 
+    @IBOutlet weak var partnerView: UIView!
     @IBOutlet weak var partnerName: UILabel!
     @IBOutlet weak var partnersAvatar: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        partnerView.layer.borderWidth = 0.3
+        partnerView.layer.borderColor = UIColor.lightGray.cgColor
+        partnerView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

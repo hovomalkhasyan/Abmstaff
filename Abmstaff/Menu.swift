@@ -45,21 +45,10 @@ class MenuListController : UITableViewController {
             let settingsStory = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(identifier: "SettingsController")
             navigationController?.pushViewController(settingsStory, animated: true)
         case 5:
-            showAlert()
+         break
         default:
             break
         }
     }
-    private func showAlert() {
-        let alert = UIAlertController(title: "Log Out", message: "Are you sure want to log out ?", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Log Out", style: .default) { (alert) in
-            let loginStory = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController")
-            UIApplication.shared.windows.first?.rootViewController = loginStory
-            UserDefaults.standard.removeObject(forKey: "token")
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(alertAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
+
 }

@@ -27,37 +27,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lML-d7-qVP">
-                                                    <rect key="frame" x="10" y="11" width="55" height="55"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpY-Oq-X8z">
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="67"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-Ta-5qV">
+                                                            <rect key="frame" x="20" y="11" width="45" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="3CH-87-xfv"/>
+                                                                <constraint firstAttribute="width" constant="45" id="weL-cc-Bda"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCy-p9-nzw">
+                                                            <rect key="frame" x="95" y="23" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="Qbn-vT-Gz2"/>
-                                                        <constraint firstAttribute="height" constant="55" id="oSc-DR-oJi"/>
+                                                        <constraint firstItem="GCy-p9-nzw" firstAttribute="centerY" secondItem="Umv-Ta-5qV" secondAttribute="centerY" id="59p-Mc-tnu"/>
+                                                        <constraint firstItem="Umv-Ta-5qV" firstAttribute="centerY" secondItem="fpY-Oq-X8z" secondAttribute="centerY" id="F8h-0u-rl1"/>
+                                                        <constraint firstItem="GCy-p9-nzw" firstAttribute="leading" secondItem="Umv-Ta-5qV" secondAttribute="trailing" constant="30" id="NVA-Fv-U1D"/>
+                                                        <constraint firstAttribute="height" constant="61" id="eZa-D2-hZX"/>
+                                                        <constraint firstItem="Umv-Ta-5qV" firstAttribute="leading" secondItem="fpY-Oq-X8z" secondAttribute="leading" constant="20" id="z8l-vT-DL2"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <real key="value" value="27.5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-pn-CGg">
-                                                    <rect key="frame" x="75" y="28" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OHx-pn-CGg" firstAttribute="centerY" secondItem="TGt-WT-rrU" secondAttribute="centerY" id="7cp-W6-0FF"/>
-                                                <constraint firstItem="lML-d7-qVP" firstAttribute="leading" secondItem="TGt-WT-rrU" secondAttribute="leading" constant="10" id="8lm-3Q-uzE"/>
-                                                <constraint firstItem="lML-d7-qVP" firstAttribute="centerY" secondItem="TGt-WT-rrU" secondAttribute="centerY" id="BTL-tc-nJY"/>
-                                                <constraint firstAttribute="bottom" secondItem="lML-d7-qVP" secondAttribute="bottom" constant="11" id="Fqt-2K-BpO"/>
-                                                <constraint firstItem="lML-d7-qVP" firstAttribute="top" secondItem="TGt-WT-rrU" secondAttribute="top" constant="11" id="gF3-Cr-8bI"/>
-                                                <constraint firstItem="OHx-pn-CGg" firstAttribute="leading" secondItem="lML-d7-qVP" secondAttribute="trailing" constant="10" id="tqw-u2-Aqe"/>
+                                                <constraint firstAttribute="trailing" secondItem="fpY-Oq-X8z" secondAttribute="trailing" constant="10" id="4ja-Jn-a4M"/>
+                                                <constraint firstAttribute="bottom" secondItem="fpY-Oq-X8z" secondAttribute="bottom" constant="10" id="BYn-Op-5Rm"/>
+                                                <constraint firstItem="fpY-Oq-X8z" firstAttribute="leading" secondItem="TGt-WT-rrU" secondAttribute="leading" constant="10" id="E5w-uh-40J"/>
+                                                <constraint firstItem="fpY-Oq-X8z" firstAttribute="top" secondItem="TGt-WT-rrU" secondAttribute="top" id="I7m-Be-1B7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="partnerName" destination="OHx-pn-CGg" id="Nj1-cC-PG3"/>
-                                            <outlet property="partnersAvatar" destination="lML-d7-qVP" id="HHg-1k-vq3"/>
+                                            <outlet property="partnerName" destination="GCy-p9-nzw" id="Sqf-gR-CP0"/>
+                                            <outlet property="partnerView" destination="fpY-Oq-X8z" id="IM7-lZ-SS2"/>
+                                            <outlet property="partnersAvatar" destination="Umv-Ta-5qV" id="UCs-MH-LOI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

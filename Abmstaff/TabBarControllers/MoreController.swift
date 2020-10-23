@@ -10,6 +10,7 @@ import UIKit
 class MoreController: UIViewController {
     var array = ["About us", "Positions", "Technologies", "Settings"]
     var btnArray = ["Staff", "Projects", "Team", "Partners"]
+    var images = ["Staffs", "projects-1", "team-1", "partners-1"]
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class MoreController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 60
+        tableView.tableFooterView = UIView()
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -51,6 +53,7 @@ extension MoreController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoreCollectionCell", for: indexPath) as! MoreCollectionCell
         cell.btnName.text = btnArray[indexPath.row]
+        cell.btnImage.image = UIImage(named: images[indexPath.row])
         cell.view.layer.borderWidth = 0.3
         cell.view.layer.borderColor = UIColor.lightGray.cgColor
         cell.view.layer.cornerRadius = 10

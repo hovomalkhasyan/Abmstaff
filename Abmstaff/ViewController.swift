@@ -112,7 +112,7 @@ class ViewController: UIViewController {
                     NetWorkService.request(url: urlEndpoint, method: .post, param: params, encoding: JSONEncoding.default) { (response: DataClass) in
                         print(response.token)
                         UserDefaults.standard.setValue(response.token, forKey: "token")
-                        let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "navigation")
+                        let newVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(identifier: "tab")
                         UIApplication.shared.windows.first?.rootViewController = newVC
                     }
                 }
