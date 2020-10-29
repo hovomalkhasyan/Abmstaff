@@ -36,6 +36,7 @@ extension PartnersController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PartnersCell", for: indexPath) as! PartnersCell
         cell.partnerName.text = partners[indexPath.row].companyName
+        cell.project.text = partners[indexPath.row].companyName
         if let urlImage = partners[indexPath.row].logo, let url = URL(string: urlImage) {
             cell.partnersAvatar.load(url: url)
         }

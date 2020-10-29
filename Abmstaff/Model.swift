@@ -19,7 +19,7 @@ struct Message: Codable {
 }
 
 struct DataList: Codable {
-    let fatherName: String
+    let fatherName: String?
     let gitLabID: String?
     let phone: String
     let address: String?
@@ -27,10 +27,10 @@ struct DataList: Codable {
     let dateOfBirth: String
     let email: String
     let permissions: [Int]
-    let privacyList: [String]
+    let privacyList: [Int]?
     let positionID: Int?
     let positionName, team: String
-    let teamID: Int?
+    let teamId: Int?
     let linkedinLink, instagramLink, facebookLink, secondPhone: String?
     let careerStartDate, employeeDate: String
     let id: Int

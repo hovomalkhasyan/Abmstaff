@@ -6,6 +6,8 @@ target 'Abmstaff' do
   use_frameworks!
 	pod 'Alamofire', '~> 5.2'
 	pod ‘SideMenu’
+	pod 'FSCalendar'
+	pod 'SDWebImage/MapKit'
   # Pods for Abmstaff
 
 end

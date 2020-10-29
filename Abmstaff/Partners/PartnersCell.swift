@@ -9,6 +9,7 @@ import UIKit
 
 class PartnersCell: UITableViewCell {
 
+    @IBOutlet weak var project: UILabel!
     @IBOutlet weak var partnerView: UIView!
     @IBOutlet weak var partnerName: UILabel!
     @IBOutlet weak var partnersAvatar: UIImageView!

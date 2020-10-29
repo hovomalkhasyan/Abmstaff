@@ -16,6 +16,7 @@ class UserController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     var userArray = [DataList]()
     let userDet = "User/Details"
+    var id = 0
     var attributesArray = ["Personal information", "My team", "Salary", "Vacation", "Cloud", "Log out"]
     var menu : SideMenuNavigationController?
     let menuListController = MenuListController()
@@ -28,10 +29,12 @@ class UserController: UIViewController {
             if let urlImage = response.profilePhoto, let url = URL(string: urlImage) {
                 self.userImage.load(url: url)
             }
+            self.id = response.teamId ?? 0
+
         }
-        setupTableView()
         self.navigationController?.isNavigationBarHidden = true
-//        sideMenuSetups()
+        setupTableView()
+       
     }
     private func showAlert() {
         let alert = UIAlertController(title: "Log Out", message: "Are you sure want to log out ?", preferredStyle: .alert)
@@ -50,8 +53,6 @@ class UserController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    
     
     @objc func leftButton() {
         present(self.menu!, animated: true)
@@ -85,8 +86,16 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
         cell.attributesView.layer.cornerRadius = 23
         return cell
     }
+  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            let personal = UIStoryboard(name: "Personal", bundle: nil).instantiateViewController(identifier: "PersonalController") as! PersonalController
+            navigationController?.pushViewController(personal, animated: true)
+        case 1:
+            let myteam = UIStoryboard(name: "Team", bundle: nil).instantiateViewController(identifier: "TeamController") as! TeamController
+            myteam.teamId = id
+            navigationController?.pushViewController(myteam, animated: true)
         case 5:
             showAlert()
         default:

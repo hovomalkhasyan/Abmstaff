@@ -8,7 +8,7 @@
 import UIKit
 
 class StaffCell: UITableViewCell {
-
+    
     @IBOutlet weak var phoneImage: UIImageView!
     @IBOutlet weak var userView: UIView!
     @IBOutlet weak var userLastName: UILabel!
@@ -18,10 +18,14 @@ class StaffCell: UITableViewCell {
     @IBOutlet weak var team: UILabel!
     @IBOutlet weak var userStatus: UILabel!
     override func awakeFromNib() {
-        super.awakeFromNib()
-
         
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userAvatar.image = UIImage(named: "logo")
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

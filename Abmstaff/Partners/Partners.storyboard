@@ -16,29 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-oK-Qgl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-oK-Qgl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartnersCell" rowHeight="77" id="lxo-Zh-mGm" customClass="PartnersCell" customModule="Abmstaff" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartnersCell" rowHeight="84" id="lxo-Zh-mGm" customClass="PartnersCell" customModule="Abmstaff" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lxo-Zh-mGm" id="TGt-WT-rrU">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpY-Oq-X8z">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="67"/>
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="74"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Umv-Ta-5qV">
-                                                            <rect key="frame" x="20" y="11" width="45" height="45"/>
+                                                            <rect key="frame" x="20" y="14.5" width="45" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="3CH-87-xfv"/>
                                                                 <constraint firstAttribute="width" constant="45" id="weL-cc-Bda"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCy-p9-nzw">
-                                                            <rect key="frame" x="95" y="23" width="42" height="21"/>
+                                                            <rect key="frame" x="93" y="14" width="44.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Projects-2" translatesAutoresizingMaskIntoConstraints="NO" id="Kcl-2Q-kZU">
+                                                            <rect key="frame" x="93" y="45" width="15" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="15" id="Vql-Y2-Vaf"/>
+                                                                <constraint firstAttribute="height" constant="15" id="pVQ-BC-QQf"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CX3-sQ-sgK">
+                                                            <rect key="frame" x="116" y="42" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -46,10 +59,17 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="GCy-p9-nzw" firstAttribute="centerY" secondItem="Umv-Ta-5qV" secondAttribute="centerY" id="59p-Mc-tnu"/>
+                                                        <constraint firstItem="Kcl-2Q-kZU" firstAttribute="leading" secondItem="Umv-Ta-5qV" secondAttribute="trailing" constant="28" id="3FT-Ds-NA8"/>
+                                                        <constraint firstItem="Kcl-2Q-kZU" firstAttribute="top" secondItem="GCy-p9-nzw" secondAttribute="bottom" constant="10" id="5qU-0O-ZRb"/>
+                                                        <constraint firstItem="CX3-sQ-sgK" firstAttribute="top" secondItem="GCy-p9-nzw" secondAttribute="bottom" constant="7" id="ANv-Y1-d0N"/>
                                                         <constraint firstItem="Umv-Ta-5qV" firstAttribute="centerY" secondItem="fpY-Oq-X8z" secondAttribute="centerY" id="F8h-0u-rl1"/>
-                                                        <constraint firstItem="GCy-p9-nzw" firstAttribute="leading" secondItem="Umv-Ta-5qV" secondAttribute="trailing" constant="30" id="NVA-Fv-U1D"/>
-                                                        <constraint firstAttribute="height" constant="61" id="eZa-D2-hZX"/>
+                                                        <constraint firstItem="GCy-p9-nzw" firstAttribute="leading" secondItem="Umv-Ta-5qV" secondAttribute="trailing" constant="28" id="GR1-5m-eFc"/>
+                                                        <constraint firstItem="CX3-sQ-sgK" firstAttribute="leading" secondItem="Kcl-2Q-kZU" secondAttribute="trailing" constant="8" symbolic="YES" id="Owc-4v-Wnq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Umv-Ta-5qV" secondAttribute="bottom" constant="14.5" id="SA6-V9-4IZ"/>
+                                                        <constraint firstItem="GCy-p9-nzw" firstAttribute="top" secondItem="fpY-Oq-X8z" secondAttribute="top" constant="14" id="VJc-65-yNO"/>
+                                                        <constraint firstAttribute="height" constant="72" id="eZa-D2-hZX"/>
+                                                        <constraint firstItem="Umv-Ta-5qV" firstAttribute="top" secondItem="fpY-Oq-X8z" secondAttribute="top" constant="14.5" id="pjz-f1-vZl"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GCy-p9-nzw" secondAttribute="trailing" constant="20" id="wgh-rV-3WZ"/>
                                                         <constraint firstItem="Umv-Ta-5qV" firstAttribute="leading" secondItem="fpY-Oq-X8z" secondAttribute="leading" constant="20" id="z8l-vT-DL2"/>
                                                     </constraints>
                                                 </view>
@@ -65,6 +85,7 @@
                                             <outlet property="partnerName" destination="GCy-p9-nzw" id="Sqf-gR-CP0"/>
                                             <outlet property="partnerView" destination="fpY-Oq-X8z" id="IM7-lZ-SS2"/>
                                             <outlet property="partnersAvatar" destination="Umv-Ta-5qV" id="UCs-MH-LOI"/>
+                                            <outlet property="project" destination="CX3-sQ-sgK" id="f6z-gP-K7u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -89,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Projects-2" width="15" height="15"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

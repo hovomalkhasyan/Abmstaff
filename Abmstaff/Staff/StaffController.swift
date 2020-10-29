@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class StaffController: UIViewController {
 
@@ -61,13 +62,14 @@ extension StaffController: UITableViewDelegate, UITableViewDataSource {
        
             let cell = membersTableView.dequeueReusableCell(withIdentifier: "StaffCell", for: indexPath) as! StaffCell
             if let urlImage = staffArray[indexPath.row].profilePhoto, let url = URL(string: urlImage) {
-                cell.userAvatar.load(url: url)
+                cell.userAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "logo"))
             }
             cell.userName.text = staffArray[indexPath.row].fullName
             cell.phoneNumber.text = staffArray[indexPath.row].phone
             cell.userView.layer.borderWidth = 0.3
             cell.userView.layer.borderColor = UIColor.lightGray.cgColor
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
             return cell
        
     }
