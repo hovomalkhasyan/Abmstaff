@@ -18,13 +18,13 @@ struct Message: Codable {
     let value: String?
 }
 
-struct DataList: Codable {
+struct UserInfo: Codable {
     let fatherName: String?
     let gitLabID: String?
     let phone: String
     let address: String?
     let type, gender: Int
-    let dateOfBirth: String
+    let dateOfBirth: String?
     let email: String
     let permissions: [Int]
     let privacyList: [Int]?
@@ -32,7 +32,7 @@ struct DataList: Codable {
     let positionName, team: String
     let teamId: Int?
     let linkedinLink, instagramLink, facebookLink, secondPhone: String?
-    let careerStartDate, employeeDate: String
+    let careerStartDate, employeeDate: String?
     let id: Int
     let firstName, lastName: String
     let profilePhoto: String?
@@ -80,7 +80,7 @@ struct UserDetailsId: Codable {
     let dateOfBirth : String?
     let employeeDate : String?
     let blockDate: String?
-    let email: String
+    let email: String?
     let isBlocked: Bool
     let gitLabID, roleID: String?
     let roleName: String?
@@ -237,3 +237,47 @@ struct AllStaffDetails : Codable {
         return firstName + " " + lastName
     }
 }
+
+
+// MARK: - UserPage
+
+struct ResponseData: Codable {
+    let data: [Datum]
+    let pageCount, itemCount: Int
+}
+
+// MARK: - Datum
+struct Datum: Codable {
+    let phone: String?
+    let gender: Int
+    let dateOfBirth: Date
+    let email: String
+    let team: String?
+    let roleID: Int?
+    let roleName: String?
+    let position: String
+    let isBlocked: Bool
+    let id: Int
+    let firstName, lastName: String
+    let profilePhoto: String?
+}
+
+
+// MARK: - PartnersContacts
+
+struct PartnersContacts: Codable {
+    let positionID : Int?
+    let positionName: String?
+    let projectIDS: [Int]?
+    let id: Int
+    let firstName: String
+    let lastName: String
+    let phone: String?
+    let secondPhone: String?
+    let email: String?
+    
+    var fullName : String {
+        return firstName + " " + lastName
+    }
+}
+

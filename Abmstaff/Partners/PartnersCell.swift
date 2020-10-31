@@ -8,7 +8,8 @@
 import UIKit
 
 class PartnersCell: UITableViewCell {
-
+    
+    
     @IBOutlet weak var project: UILabel!
     @IBOutlet weak var partnerView: UIView!
     @IBOutlet weak var partnerName: UILabel!
@@ -19,11 +20,17 @@ class PartnersCell: UITableViewCell {
         partnerView.layer.borderColor = UIColor.lightGray.cgColor
         partnerView.layer.cornerRadius = 10
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        partnersAvatar.image = UIImage(named: "logo")
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
 
 }

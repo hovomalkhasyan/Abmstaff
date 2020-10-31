@@ -36,25 +36,25 @@ class StaffDetailsController: UIViewController {
         super.viewDidLoad()
         setupSocialButtons()
         NetWorkService.request(url: edpoint + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: UserDetailsId ) in
+            
             self.userPosition.text = response.positionName
             self.callButton.setTitle(response.phone ?? "-", for: .normal)
             self.secondPhone.setTitle(response.secondPhone ?? "-", for: .normal)
             self.lastName.text = response.fullName
-            self.mail = response.email
             self.email.setTitle(response.email ?? "-", for: .normal)
             self.team.text = response.team
-            self.date.text = response.dateOfBirth?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd/MMM/yyyy")
-            self.employee.text = response.employeeDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd/MMM/yyyy")
-            self.careerStart.text = response.careerStartDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd/MMM/yyyy")
+            self.date.text = response.dateOfBirth?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd MMM yyyy") ?? "-"
+            self.employee.text = response.employeeDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd MMM yyyy") ?? "-"
+            self.careerStart.text = response.careerStartDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd MMM yyyy") ?? "-"
             self.adress.text = response.address ?? "-"
             if let urlImage = response.profilePhoto, let url = URL(string: urlImage) {
                 self.avatar.load(url: url)
             }
             
-            if let phone = response.phone, let second = response.secondPhone {
+            if let phone = response.phone, let second = response.secondPhone,  let email = response.email {
                 self.phoneNumber = phone
                 self.secondPhoneNumber = second
-                
+                self.mail = email
                 
                 if response.facebookLink != nil {
                     self.fblink = response.facebookLink
@@ -88,16 +88,23 @@ class StaffDetailsController: UIViewController {
     }
     
     @IBAction func callNumber(_ sender: UIButton) {
-        if sender.tag == 0 {
-            guard let phoneNumber = phoneNumber else {return}
-            guard let number = URL(string: "tel://" + phoneNumber) else { return }
-            UIApplication.shared.open(number)
-        }else {
-            guard let secondNumber = secondPhoneNumber else {return}
-            guard let number = URL(string: "tel://" + secondNumber) else { return }
-            UIApplication.shared.open(number)
+        DispatchQueue.main.async {
+            switch sender.tag {
+            case 0:
+                guard let phoneNumber = self.phoneNumber else {return}
+                guard let number = URL(string: "tel://" + phoneNumber) else { return }
+                UIApplication.shared.open(number)
+                
+            case 1:
+                guard let secondNumber = self.secondPhoneNumber else {return}
+                guard let number = URL(string: "tel://" + secondNumber) else { return }
+                UIApplication.shared.open(number)
+            default:
+                break
+            }
         }
-       
+        
+        
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {

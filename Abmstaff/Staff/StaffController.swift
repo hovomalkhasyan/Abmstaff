@@ -69,7 +69,6 @@ extension StaffController: UITableViewDelegate, UITableViewDataSource {
             cell.userView.layer.borderWidth = 0.3
             cell.userView.layer.borderColor = UIColor.lightGray.cgColor
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        
             return cell
        
     }

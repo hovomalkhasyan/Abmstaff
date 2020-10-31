@@ -8,14 +8,17 @@
 import UIKit
 import Alamofire
 
+
+
 class PersonalController: UIViewController {
-    var userArray = [DataList]()
-    let userDet = "User/Details"
+    var userArray = [UserInfo]()
+    private let userDet = "User/Details"
+    private let editPrivacy = "User/EditPrivacy"
     var fblink : String?
     var instaLink: String?
     var lnLink : String?
+    var privaryList = [Int]()
     //MARK: - Outlets
-    
     
     @IBOutlet weak var adressSwitch: UISwitch!
     @IBOutlet weak var phoneNumberSwitch: UISwitch!
@@ -38,8 +41,8 @@ class PersonalController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             socialButtonsSetups()
-        setupSwitch()
-        NetWorkService.request(url: userDet, method: .get, param: nil, encoding: JSONEncoding.default) { (response: DataList) in
+            setupSwitch()
+        NetWorkService.request(url: userDet, method: .get, param: nil, encoding: JSONEncoding.default) { [self] (response: UserInfo) in
             self.team.text = response.team
             self.userFullName.text = response.fullName
             self.secondPhone.text = response.secondPhone ?? "-"
@@ -47,9 +50,9 @@ class PersonalController: UIViewController {
             self.phone.text = response.phone
             self.email.text = response.email
             self.userPosition.text = response.positionName
-            self.dateOfBirth.text = response.dateOfBirth.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", outGoingFormat: "dd MMM yyy")
-            self.employee.text = response.employeeDate.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", outGoingFormat: "dd MMM yyy")
-            self.career.text = response.careerStartDate.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", outGoingFormat: "dd MMM yyy")
+            self.dateOfBirth.text = response.dateOfBirth?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", outGoingFormat: "dd MMM yyy") ?? "-"
+            self.employee.text = response.employeeDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", outGoingFormat: "dd MMM yyy") ?? "-"
+            self.career.text = response.careerStartDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", outGoingFormat: "dd MMM yyy") ?? "-"
             self.fblink = response.facebookLink
             self.instaLink = response.instagramLink
             self.lnLink = response.linkedinLink
@@ -65,7 +68,10 @@ class PersonalController: UIViewController {
             if response.linkedinLink != nil{
                 self.lnBtn.isHidden = false
             }
-            
+            self.phoneNumberSwitch.isOn = response.privacyList?.firstIndex(of: 0) == nil
+            self.adressSwitch.isOn = response.privacyList?.firstIndex(of: 1) == nil
+            guard let privacy = response.privacyList else {return}
+            self.privaryList = privacy
             
         }
         privacyView.layer.borderWidth = 0.3
@@ -82,10 +88,39 @@ class PersonalController: UIViewController {
     }
     
     private func setupSwitch() {
-        adressSwitch.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        phoneNumberSwitch.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        adressSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        phoneNumberSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
     }
-
+    
+    
+    
+    @IBAction func phonrNumberSwitchAction(_ sender: UISwitch) {
+        if sender.isOn {
+//            if let index = privaryList.firstIndex(of: 0) {
+//                privaryList.remove(at: index)
+//            }
+//            NetWorkService.request(url: editPrivacy, method: .put, param: privaryList, encoding: JSONEncoding.default) { (respose: Response ) in
+//
+//            }
+        } else {
+//            privaryList.append(0)
+            
+        }
+    }
+    
+    
+    @IBAction func adressSwitchAction(_ sender: UISwitch) {
+        if sender.isOn {
+//            if let index = privaryList.firstIndex(of: 1){
+//                privaryList.remove(at: index)
+//            }
+            
+        }else {
+//            privaryList.append(1)
+            
+        }
+    }
+ 
     @IBAction func socialMedia(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -108,3 +143,4 @@ class PersonalController: UIViewController {
         }
     }
 }
+
