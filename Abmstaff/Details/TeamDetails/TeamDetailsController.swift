@@ -65,7 +65,7 @@ extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
             cell.userName.text = members[indexPath.row].fullName
             cell.position.text = members[indexPath.row].position
             if let urlImage = members[indexPath.row].profilePhoto, let url = URL(string: urlImage) {
-                cell.userImage.load(url: url)
+                cell.userImage.sd_setImage(with: url)
             }
             return cell
             
@@ -73,7 +73,7 @@ extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TeamProjectCell", for: indexPath) as! TeamProjectCell
             cell.teamName.text = teamProject[indexPath.row].name
             if let urlImage = teamProject[indexPath.row].image, let url = URL(string: urlImage) {
-                cell.teamImage.load(url: url)
+                cell.teamImage.sd_setImage(with: url)
             }
             return cell
         }

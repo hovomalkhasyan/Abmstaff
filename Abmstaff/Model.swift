@@ -241,25 +241,30 @@ struct AllStaffDetails : Codable {
 
 // MARK: - UserPage
 
-struct ResponseData: Codable {
-    let data: [Datum]
-    let pageCount, itemCount: Int
+struct ResponseData<T:Codable>: Codable {
+    let data: [T]
+    let pageCount: Int
+    let itemCount: Int
 }
 
 // MARK: - Datum
-struct Datum: Codable {
+struct UserModel: Codable {
     let phone: String?
-    let gender: Int
-    let dateOfBirth: Date
-    let email: String
+    let gender: Int?
+    let dateOfBirth: String?
+    let email: String?
     let team: String?
     let roleID: Int?
     let roleName: String?
-    let position: String
+    let position: String?
     let isBlocked: Bool
     let id: Int
     let firstName, lastName: String
     let profilePhoto: String?
+    
+    var fullName:String {
+        return firstName + " " + lastName
+    }
 }
 
 
@@ -280,4 +285,5 @@ struct PartnersContacts: Codable {
         return firstName + " " + lastName
     }
 }
+
 

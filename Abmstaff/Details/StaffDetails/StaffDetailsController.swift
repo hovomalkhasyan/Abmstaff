@@ -48,7 +48,7 @@ class StaffDetailsController: UIViewController {
             self.careerStart.text = response.careerStartDate?.UTCToLocal(incomingFormat: "yyyy-MM-dd'T'H:mm:ss'Z'", outGoingFormat: "dd MMM yyyy") ?? "-"
             self.adress.text = response.address ?? "-"
             if let urlImage = response.profilePhoto, let url = URL(string: urlImage) {
-                self.avatar.load(url: url)
+                self.avatar.sd_setImage(with: url)
             }
             
             if let phone = response.phone, let second = response.secondPhone,  let email = response.email {

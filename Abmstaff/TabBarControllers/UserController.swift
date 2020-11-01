@@ -25,7 +25,7 @@ class UserController: UIViewController {
             self.userName.text = response.fullName
             self.userPosition.text = response.positionName
             if let urlImage = response.profilePhoto, let url = URL(string: urlImage) {
-                self.userImage.load(url: url)
+                self.userImage.sd_setImage(with: url)
             }
             self.id = response.teamId ?? 0
 

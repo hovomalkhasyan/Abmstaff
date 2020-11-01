@@ -40,7 +40,7 @@ extension ProjectController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         if let urlImage = projectsArray[indexPath.row].image, let url = URL(string: urlImage) {
-            cell.projectImage.load(url: url)
+            cell.projectImage.sd_setImage(with: url)
         }
         cell.projetName.text = projectsArray[indexPath.row].name
         return cell

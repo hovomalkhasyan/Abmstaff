@@ -23,7 +23,7 @@ class ProjectDetailsController: UIViewController {
             self.teamLbl.text = response.teamName
             self.dateProject.text = response.createdDt
             if let urlImage = response.image, let url = URL(string: urlImage) {
-                self.projectPhoto.load(url: url)
+                self.projectPhoto.sd_setImage(with: url)
             }
         }
     }

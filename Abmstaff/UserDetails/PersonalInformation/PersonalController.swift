@@ -12,12 +12,19 @@ import Alamofire
 
 class PersonalController: UIViewController {
     var userArray = [UserInfo]()
+  
+    // MARK: - Endpoints
+    
     private let userDet = "User/Details"
     private let editPrivacy = "User/EditPrivacy"
+    
+    //MARK: - Properties
+    
     var fblink : String?
     var instaLink: String?
     var lnLink : String?
-    var privaryList = [Int]()
+    var privacyList = [Int]()
+    
     //MARK: - Outlets
     
     @IBOutlet weak var adressSwitch: UISwitch!
@@ -37,11 +44,13 @@ class PersonalController: UIViewController {
     @IBOutlet weak var dateOfBirth: UILabel!
     @IBOutlet weak var userPosition: UILabel!
     @IBOutlet weak var userFullName: UILabel!
+   
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            socialButtonsSetups()
-            setupSwitch()
+        socialButtonsSetups()
+        setupSwitch()
         NetWorkService.request(url: userDet, method: .get, param: nil, encoding: JSONEncoding.default) { [self] (response: UserInfo) in
             self.team.text = response.team
             self.userFullName.text = response.fullName
@@ -71,7 +80,7 @@ class PersonalController: UIViewController {
             self.phoneNumberSwitch.isOn = response.privacyList?.firstIndex(of: 0) == nil
             self.adressSwitch.isOn = response.privacyList?.firstIndex(of: 1) == nil
             guard let privacy = response.privacyList else {return}
-            self.privaryList = privacy
+            self.privacyList = privacy
             
         }
         privacyView.layer.borderWidth = 0.3
@@ -81,46 +90,62 @@ class PersonalController: UIViewController {
         self.title = "Personal information"
     }
     
+    //MARK: - SocialButtons
+    
     private func socialButtonsSetups() {
         fbButton.isHidden = true
         instaBtn.isHidden = true
         lnBtn.isHidden = true
     }
     
+    //MARK: - SetupSwitch
+    
     private func setupSwitch() {
         adressSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         phoneNumberSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
     }
     
-    
+    //MARK: - Switches
     
     @IBAction func phonrNumberSwitchAction(_ sender: UISwitch) {
         if sender.isOn {
-//            if let index = privaryList.firstIndex(of: 0) {
-//                privaryList.remove(at: index)
-//            }
-//            NetWorkService.request(url: editPrivacy, method: .put, param: privaryList, encoding: JSONEncoding.default) { (respose: Response ) in
-//
-//            }
+            if let index = privacyList.firstIndex(of: 0) {
+                privacyList.remove(at: index)
+            }
+            let params : [String:Any] = ["privacyList" : privacyList]
+            NetWorkService.request(url: editPrivacy, method: .put, param: params, encoding: JSONEncoding.default) { (response: Bool) in
+                print("number is hide")
+            }
         } else {
-//            privaryList.append(0)
-            
+            privacyList.append(0)
+            let params2 : [String:Any] = ["privacyList" : privacyList]
+            NetWorkService.request(url: editPrivacy, method: .put, param: params2, encoding: JSONEncoding.default) { (response: Bool) in
+                print("Show phone number")
+            }
         }
     }
     
     
     @IBAction func adressSwitchAction(_ sender: UISwitch) {
         if sender.isOn {
-//            if let index = privaryList.firstIndex(of: 1){
-//                privaryList.remove(at: index)
-//            }
-            
+            if let index = privacyList.firstIndex(of: 1){
+                privacyList.remove(at: index)
+            }
+            let showAdresParams : [String:Any] = ["privacyList" : privacyList]
+            NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
+                print("adress is hide")
+            }
         }else {
-//            privaryList.append(1)
-            
+            privacyList.append(1)
+            let showAdresParams : [String:Any] = ["privacyList" : privacyList]
+            NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
+                print("show adress")
+            }
         }
     }
- 
+    
+    //MARK: - SocialMediaActions
+    
     @IBAction func socialMedia(_ sender: UIButton) {
         switch sender.tag {
         case 0:

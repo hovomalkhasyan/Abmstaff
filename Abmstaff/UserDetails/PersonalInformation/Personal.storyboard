@@ -360,7 +360,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtj-Ng-hFr">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtj-Ng-hFr">
                                                                 <rect key="frame" x="0.0" y="23" width="37.5" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
@@ -436,7 +436,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zss-Nj-gCc">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zss-Nj-gCc">
                                                                 <rect key="frame" x="0.0" y="23" width="32.5" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>

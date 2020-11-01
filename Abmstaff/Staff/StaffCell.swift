@@ -11,7 +11,6 @@ class StaffCell: UITableViewCell {
     
     @IBOutlet weak var phoneImage: UIImageView!
     @IBOutlet weak var userView: UIView!
-    @IBOutlet weak var userLastName: UILabel!
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
