@@ -14,7 +14,7 @@ class StaffDetailsController: UIViewController {
     var id = 0
     var phoneNumber : String?
     var secondPhoneNumber: String?
-    var mail = ""
+    var mail : String?
     private var fblink: String?
     private var instaLink: String?
     private var lnLink: String?
@@ -51,24 +51,22 @@ class StaffDetailsController: UIViewController {
                 self.avatar.sd_setImage(with: url)
             }
             
-            if let phone = response.phone, let second = response.secondPhone,  let email = response.email {
-                self.phoneNumber = phone
-                self.secondPhoneNumber = second
-                self.mail = email
-                
-                if response.facebookLink != nil {
-                    self.fblink = response.facebookLink
-                    self.fbButon.isHidden = false
-                }
-                if response.instagramLink != nil {
-                    self.instaLink = response.instagramLink
-                    self.instBtn.isHidden = false
-                }
-                if response.linkedinLink != nil{
-                    self.lnLink = response.linkedinLink
-                    self.lnBtn.isHidden = false
-                }
-                
+            self.phoneNumber = response.phone
+            self.mail = response.email
+            self.secondPhoneNumber = response.secondPhone
+            
+            
+            if response.facebookLink != nil {
+                self.fblink = response.facebookLink
+                self.fbButon.isHidden = false
+            }
+            if response.instagramLink != nil {
+                self.instaLink = response.instagramLink
+                self.instBtn.isHidden = false
+            }
+            if response.linkedinLink != nil{
+                self.lnLink = response.linkedinLink
+                self.lnBtn.isHidden = false
             }
         }
     }
@@ -82,8 +80,8 @@ class StaffDetailsController: UIViewController {
     func sendEmail() {
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
-        mailVC.setToRecipients([mail])
-        
+        guard let email = mail else {return}
+        mailVC.setToRecipients([email])
         present(mailVC, animated: true, completion: nil)
     }
     
@@ -101,7 +99,7 @@ class StaffDetailsController: UIViewController {
         UIApplication.shared.open(number)
         
     }
-   
+    
     
     @IBAction func sendMessage(_ sender: UIButton) {
         sendEmail()

@@ -20,11 +20,12 @@ class CalendarController: UIViewController {
         })
     }
     
+    @IBOutlet weak var workingDayCount: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarSetup()
-        
+        workingDayCount.text = "Working Days 0"
     }
     
     @IBAction func xyz() {
@@ -71,6 +72,7 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
         let today = Date()
         let daysLater = Calendar.current.date(byAdding: .day, value: 15, to: today)!
         return daysLater
+    
     }
     
     
@@ -88,7 +90,9 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             
 //
             getAllDatesString()
+            workingDayCount.text = "Working Days \(String(dates!.count))"
             return
+        
         }
         
         if firstDate != nil && lastDate == nil {
@@ -98,6 +102,7 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
                 datesRange.append(firstDate!)
                 
                 getAllDatesString()
+                workingDayCount.text = "Working Days \(String(dates!.count))"
                 return
             }
             
@@ -110,6 +115,8 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             datesRange = range
 
             getAllDatesString()
+            workingDayCount.text = "Working Days \(String(dates!.count))"
+            
             return
         }
         
@@ -121,42 +128,29 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             lastDate = nil
             firstDate = nil
             
-            datesRange = []
+            datesRange.removeAll()
+            workingDayCount.text = "Working Days \(String(dates!.count))"
 
         }
        
     }
+
     
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        if firstDate != nil && lastDate != nil {
-            for d in calendar.selectedDates {
-                calendar.deselect(d)
-            }
-            
-            lastDate = nil
-            firstDate = nil
-            datesRange.removeAll()
-            
-        }
-        
-    }
-    
-    func getAllDatesString() -> VacantionRequestModel {
+    func getAllDatesString() -> VacationRequestModel {
         if let firstItem = dates?.first {
             let formatter = DateFormatter()
             formatter.calendar = Calendar(identifier: .gregorian)
             formatter.timeZone = TimeZone.current
             formatter.dateFormat = "yyyy-MMM-dd'T'HH:mm:ss'T"
             let str = formatter.string(from: firstItem)
-            return VacantionRequestModel(startDt: str, days: dates!.count)
+            return VacationRequestModel(startDt: str, days: dates!.count)
         }
-        return VacantionRequestModel(startDt: "", days: 0)
+        return VacationRequestModel(startDt: "", days: 0)
     }
     
 }
 
-struct VacantionRequestModel: Codable {
+struct VacationRequestModel: Codable {
     var startDt: String
     var days: Int
 }

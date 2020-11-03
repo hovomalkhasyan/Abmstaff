@@ -39,6 +39,7 @@
 		DA94EF6A2525D41A00177EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA94EF682525D41A00177EF7 /* LaunchScreen.storyboard */; };
 		DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94EF752525D70100177EF7 /* NetWorkService.swift */; };
 		DA94EF792525DAC700177EF7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94EF782525DAC700177EF7 /* Model.swift */; };
+		DA9516A1255161BD00318DA8 /* WarmodroidSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9516A0255161BD00318DA8 /* WarmodroidSwitch.swift */; };
 		DA9A2D3A2534623C00B35831 /* ViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D392534623C00B35831 /* ViewDemo.swift */; };
 		DA9A2D3F25348C0600B35831 /* EnterCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */; };
 		DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9A2D4625348C3000B35831 /* Login.storyboard */; };
@@ -112,6 +113,7 @@
 		DA94EF6B2525D41A00177EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA94EF752525D70100177EF7 /* NetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
 		DA94EF782525DAC700177EF7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DA9516A0255161BD00318DA8 /* WarmodroidSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmodroidSwitch.swift; sourceTree = "<group>"; };
 		DA9A2D392534623C00B35831 /* ViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDemo.swift; sourceTree = "<group>"; };
 		DA9A2D3E25348C0600B35831 /* EnterCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeController.swift; sourceTree = "<group>"; };
 		DA9A2D4625348C3000B35831 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 			path = Abmstaff;
 			sourceTree = "<group>";
 		};
+		DA95169E2551619100318DA8 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				DA9516A0255161BD00318DA8 /* WarmodroidSwitch.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
 		DA9A2D3D25348BDF00B35831 /* Login  */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +369,7 @@
 		DAC1AD472546D70D00105DB0 /* PersonalInformation */ = {
 			isa = PBXGroup;
 			children = (
+				DA95169E2551619100318DA8 /* Switch */,
 				DAC1AD482546D73300105DB0 /* PersonalController.swift */,
 				DAC1AD4C2546D74A00105DB0 /* Personal.storyboard */,
 			);
@@ -601,6 +612,7 @@
 				DA64A62B25385F2A00EEEB08 /* PartnerDetailsController.swift in Sources */,
 				DA8812292541D1CA00F5A4F1 /* HomePageController.swift in Sources */,
 				DAE22C032541974F00E73C0D /* MoreController.swift in Sources */,
+				DA9516A1255161BD00318DA8 /* WarmodroidSwitch.swift in Sources */,
 				DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */,
 				DAD686612535B79900E239C7 /* textFld.swift in Sources */,
 				DAC1AD242546AA2D00105DB0 /* CalendarController.swift in Sources */,

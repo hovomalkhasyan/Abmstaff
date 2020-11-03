@@ -26,6 +26,8 @@ class PersonalController: UIViewController {
     
     @IBOutlet weak var adressSwitch: UISwitch!
     @IBOutlet weak var phoneNumberSwitch: UISwitch!
+    @IBOutlet weak var phoneNumberSwitchView: WarmodroidSwitch!
+    @IBOutlet weak var showAdresSwitchView: WarmodroidSwitch!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var instaBtn: UIButton!
@@ -48,8 +50,10 @@ class PersonalController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         socialButtonsSetups()
-        setupSwitch()
+        switchesDelegate()
+//        setupSwitch()
         NetWorkService.request(url: userDet, method: .get, param: nil, encoding: JSONEncoding.default) { [self] (response: UserInfo) in
+            
             self.team.text = response.team
             self.userFullName.text = response.fullName
             self.secondPhone.text = response.secondPhone ?? "-"
@@ -75,8 +79,11 @@ class PersonalController: UIViewController {
             if response.linkedinLink != nil{
                 self.lnBtn.isHidden = false
             }
-            self.phoneNumberSwitch.isOn = response.privacyList?.firstIndex(of: 0) == nil
-            self.adressSwitch.isOn = response.privacyList?.firstIndex(of: 1) == nil
+            self.phoneNumberSwitchView.isOn = response.privacyList?.firstIndex(of: 0) == nil
+            self.showAdresSwitchView.isOn = response.privacyList?.firstIndex(of: 1) == nil
+            self.phoneNumberSwitchView.setState()
+            self.showAdresSwitchView.setState()
+            
             guard let privacy = response.privacyList else {return}
             self.privacyList = privacy
             
@@ -97,54 +104,11 @@ class PersonalController: UIViewController {
         lnBtn.isHidden = true
     }
     
-    //MARK: - SetupSwitch
-    
-    private func setupSwitch() {
-        adressSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        adressSwitch.onTintColor = UIColor(red: 246, green: 0, blue: 101, alpha: 0.32)
-        phoneNumberSwitch.onTintColor = UIColor(red: 246, green: 0, blue: 101, alpha: 0.32)
-        phoneNumberSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+    private func switchesDelegate() {
+        phoneNumberSwitchView.delegate = self
+        showAdresSwitchView.delegate = self
     }
-    
-    //MARK: - Switches
-    
-    @IBAction func phonrNumberSwitchAction(_ sender: UISwitch) {
-        if sender.isOn {
-            if let index = privacyList.firstIndex(of: 0) {
-                privacyList.remove(at: index)
-            }
-            let params : [String:Any] = ["privacyList" : privacyList]
-            NetWorkService.request(url: editPrivacy, method: .put, param: params, encoding: JSONEncoding.default) { (response: Bool) in
-                print("Show phone number")
-            }
-        } else {
-            privacyList.append(0)
-            let params2 : [String:Any] = ["privacyList" : privacyList]
-            NetWorkService.request(url: editPrivacy, method: .put, param: params2, encoding: JSONEncoding.default) { (response: Bool) in
-                print("number is hide")
-            }
-        }
-    }
-    
-    
-    @IBAction func adressSwitchAction(_ sender: UISwitch) {
-        if sender.isOn {
-            if let index = privacyList.firstIndex(of: 1){
-                privacyList.remove(at: index)
-            }
-            let showAdresParams : [String:Any] = ["privacyList" : privacyList]
-            NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
-                print("show adress")
-            }
-        }else {
-            privacyList.append(1)
-            let showAdresParams : [String:Any] = ["privacyList" : privacyList]
-            NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
-                print("adress is hide")
-            }
-        }
-    }
-    
+      
     //MARK: - SocialMediaActions
     
     @IBAction func socialMedia(_ sender: UIButton) {
@@ -170,3 +134,41 @@ class PersonalController: UIViewController {
     }
 }
 
+extension PersonalController: WarmodroidSwitchDelegate {
+    func didTapSwitch(swithcher: WarmodroidSwitch, isON: Bool) {
+        if swithcher == phoneNumberSwitchView {
+            if isON {
+                if let index = privacyList.firstIndex(of: 0) {
+                    privacyList.remove(at: index)
+                }
+                let params : [String:Any] = ["privacyList" : privacyList]
+                NetWorkService.request(url: editPrivacy, method: .put, param: params, encoding: JSONEncoding.default) { (response: Bool) in
+                    print("Show phone number")
+                }
+            } else {
+                privacyList.append(0)
+                let params2 : [String:Any] = ["privacyList" : privacyList]
+                NetWorkService.request(url: editPrivacy, method: .put, param: params2, encoding: JSONEncoding.default) { (response: Bool) in
+                    print("number is hide")
+                }
+            }
+        } else {
+            
+            if showAdresSwitchView.isOn == true {
+                if let index = privacyList.firstIndex(of: 1){
+                    privacyList.remove(at: index)
+                }
+                let showAdresParams : [String:Any] = ["privacyList" : privacyList]
+                NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
+                    print("show adress")
+                }
+            } else {
+                privacyList.append(1)
+                let showAdresParams : [String:Any] = ["privacyList" : privacyList]
+                NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
+                    print("adress is hide")
+                }
+            }
+        }
+    }
+}

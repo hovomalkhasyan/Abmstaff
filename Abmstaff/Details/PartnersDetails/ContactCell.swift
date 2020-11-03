@@ -19,18 +19,19 @@ class ContactCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     func sendEmail() {
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
-        guard let mail = email else {return}
-        mailVC.setToRecipients([mail])
+        if let mail = email {
+            mailVC.setToRecipients([mail])
+        }
         UIApplication.shared.windows.first?.rootViewController?.present(mailVC, animated: true)
         
     }
@@ -39,16 +40,19 @@ class ContactCell: UITableViewCell {
         sendEmail()
     }
     @IBAction func callPhoneNumber(_ sender: UIButton) {
-       
+        
         switch sender.tag {
         case 0:
-            guard let phoneNumber = phoneNumber else {return}
-            guard let number = URL(string: "tel://" + phoneNumber) else { return }
-            UIApplication.shared.open(number)
+            if let phoneNumbers = phoneNumber {
+                guard let number = URL(string: "tel://" + phoneNumbers) else { return }
+                UIApplication.shared.open(number)
+            }
+            
         case 2:
-            guard let secondNumber = secondPhone else {return}
-            guard let number = URL(string: "tel://" + secondNumber) else { return }
-            UIApplication.shared.open(number)
+            if let secondNumber = secondPhone {
+                guard let number = URL(string: "tel://" + secondNumber) else { return }
+                UIApplication.shared.open(number)
+            }
         default:
             break
         }

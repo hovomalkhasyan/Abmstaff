@@ -31,17 +31,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working Days " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-FH-gUB">
+                                <rect key="frame" x="20" y="354" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zV6-Cg-V3t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XHs-kH-pYW" firstAttribute="top" secondItem="zV6-Cg-V3t" secondAttribute="top" id="2nN-gl-RAF"/>
                             <constraint firstItem="XHs-kH-pYW" firstAttribute="leading" secondItem="zV6-Cg-V3t" secondAttribute="leading" id="5Fs-IZ-wV0"/>
+                            <constraint firstItem="jMy-FH-gUB" firstAttribute="top" secondItem="XHs-kH-pYW" secondAttribute="bottom" constant="10" id="KGY-Bu-eII"/>
+                            <constraint firstItem="jMy-FH-gUB" firstAttribute="leading" secondItem="zV6-Cg-V3t" secondAttribute="leading" constant="20" id="lgr-LX-CyX"/>
                             <constraint firstItem="zV6-Cg-V3t" firstAttribute="trailing" secondItem="XHs-kH-pYW" secondAttribute="trailing" id="yLM-0i-waZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendar" destination="XHs-kH-pYW" id="eLt-cO-hzc"/>
+                        <outlet property="workingDayCount" destination="jMy-FH-gUB" id="sOi-X3-JXZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JD6-1w-tsr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

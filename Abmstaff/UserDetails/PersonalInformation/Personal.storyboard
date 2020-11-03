@@ -150,37 +150,38 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vZV-2k-kdv">
-                                                <rect key="frame" x="222" y="28" width="49" height="62"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dRH-hy-hrV">
+                                                <rect key="frame" x="214.5" y="37" width="32" height="44"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQt-BD-a1f">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                        <color key="onTintColor" systemColor="systemPinkColor"/>
-                                                        <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <connections>
-                                                            <action selector="phonrNumberSwitchAction:" destination="SRW-8R-WKt" eventType="valueChanged" id="XOy-Ot-IuK"/>
-                                                        </connections>
-                                                    </switch>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="svS-TW-sx2">
-                                                        <rect key="frame" x="0.0" y="31" width="51" height="31"/>
-                                                        <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <connections>
-                                                            <action selector="adressSwitchAction:" destination="SRW-8R-WKt" eventType="valueChanged" id="o2c-wq-bTZ"/>
-                                                        </connections>
-                                                    </switch>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBI-ce-kuU" customClass="WarmodroidSwitch" customModule="Abmstaff" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="16"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="16" id="Uaq-K6-qAb"/>
+                                                            <constraint firstAttribute="width" constant="32" id="znV-nz-D5h"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-qc-j2j" customClass="WarmodroidSwitch" customModule="Abmstaff" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="32" height="16"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="Z61-wF-OhY"/>
+                                                            <constraint firstAttribute="height" constant="16" id="mUe-OE-eC1"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="vZV-2k-kdv" firstAttribute="centerY" secondItem="2IM-WQ-OP4" secondAttribute="centerY" id="3WA-fE-C61"/>
                                             <constraint firstAttribute="height" constant="98" id="71C-Wc-dzh">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                             </constraint>
                                             <constraint firstItem="uE2-7z-fq3" firstAttribute="leading" secondItem="GgI-4A-2Ly" secondAttribute="leading" constant="25" id="KwH-Qt-7Vp"/>
+                                            <constraint firstItem="dRH-hy-hrV" firstAttribute="leading" secondItem="2IM-WQ-OP4" secondAttribute="trailing" constant="32" id="R9j-Rf-Eba"/>
                                             <constraint firstItem="2IM-WQ-OP4" firstAttribute="leading" secondItem="uE2-7z-fq3" secondAttribute="leading" id="VHC-Dj-cig"/>
+                                            <constraint firstItem="dRH-hy-hrV" firstAttribute="centerY" secondItem="2IM-WQ-OP4" secondAttribute="centerY" id="agm-Ck-knr"/>
                                             <constraint firstItem="uE2-7z-fq3" firstAttribute="top" secondItem="GgI-4A-2Ly" secondAttribute="top" constant="9" id="jaU-aX-rDf"/>
-                                            <constraint firstItem="vZV-2k-kdv" firstAttribute="leading" secondItem="2IM-WQ-OP4" secondAttribute="trailing" constant="39.5" id="pTF-We-cKL"/>
                                             <constraint firstItem="2IM-WQ-OP4" firstAttribute="top" secondItem="uE2-7z-fq3" secondAttribute="bottom" constant="5" id="se1-bD-Trc"/>
                                         </constraints>
                                     </view>
@@ -512,7 +513,6 @@
                     </view>
                     <connections>
                         <outlet property="adress" destination="zss-Nj-gCc" id="qQd-Ht-ior"/>
-                        <outlet property="adressSwitch" destination="svS-TW-sx2" id="aOw-a4-OCg"/>
                         <outlet property="career" destination="9z5-dK-Vvz" id="qdM-ot-vJE"/>
                         <outlet property="dateOfBirth" destination="act-yY-1iq" id="JFh-to-bPl"/>
                         <outlet property="email" destination="Xy3-pt-rlD" id="bO1-ua-cSD"/>
@@ -521,9 +521,10 @@
                         <outlet property="instaBtn" destination="ay8-Mp-pje" id="css-Eb-5Hu"/>
                         <outlet property="lnBtn" destination="JYB-Zf-G15" id="6wl-Eq-ZXS"/>
                         <outlet property="phone" destination="861-FL-wuJ" id="o84-8v-eN2"/>
-                        <outlet property="phoneNumberSwitch" destination="KQt-BD-a1f" id="L0P-eZ-kXS"/>
+                        <outlet property="phoneNumberSwitchView" destination="CBI-ce-kuU" id="IeI-9s-Mkc"/>
                         <outlet property="privacyView" destination="GgI-4A-2Ly" id="o6Q-jJ-ay3"/>
                         <outlet property="secondPhone" destination="qtj-Ng-hFr" id="uiU-87-cth"/>
+                        <outlet property="showAdresSwitchView" destination="aKo-qc-j2j" id="EE6-Ij-LzF"/>
                         <outlet property="team" destination="ig8-UB-vmm" id="VC5-gK-IMD"/>
                         <outlet property="userFullName" destination="dI2-qg-rKA" id="uEh-Vs-VFQ"/>
                         <outlet property="userImage" destination="IBV-Ct-8Cm" id="VOZ-Hf-mKX"/>
@@ -532,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="plb-KS-fxG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-73.913043478260875" y="52.232142857142854"/>
+            <point key="canvasLocation" x="-74.400000000000006" y="51.724137931034484"/>
         </scene>
     </scenes>
     <resources>
@@ -542,9 +543,6 @@
         <image name="logo" width="71" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
