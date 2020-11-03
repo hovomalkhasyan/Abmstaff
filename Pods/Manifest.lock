@@ -4,27 +4,23 @@ PODS:
   - SDWebImage/Core (5.9.4)
   - SDWebImage/MapKit (5.9.4):
     - SDWebImage/Core
-  - SideMenu (6.4.9)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - FSCalendar
   - SDWebImage/MapKit
-  - SideMenu
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - FSCalendar
     - SDWebImage
-    - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
-  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: e845e1fc6e988b288bd5be2b126b19c7214d9c4c
+PODFILE CHECKSUM: 676800bfb739ea529e94950d0231c77c869c5d7b
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

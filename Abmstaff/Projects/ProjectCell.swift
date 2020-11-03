@@ -19,6 +19,11 @@ class ProjectCell: UITableViewCell {
         projectView.layer.cornerRadius = 12
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        projectImage.image = UIImage(named: "logo")
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

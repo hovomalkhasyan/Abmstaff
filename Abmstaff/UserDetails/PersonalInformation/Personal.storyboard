@@ -127,56 +127,61 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ1-ZI-DZ6">
-                                                <rect key="frame" x="25" y="34.5" width="157.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-Zv-6Ah">
-                                                <rect key="frame" x="25" y="63" width="109" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                </variation>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQt-BD-a1f">
-                                                <rect key="frame" x="222" y="29.5" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="phonrNumberSwitchAction:" destination="SRW-8R-WKt" eventType="valueChanged" id="XOy-Ot-IuK"/>
-                                                </connections>
-                                            </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svS-TW-sx2">
-                                                <rect key="frame" x="222" y="58" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="adressSwitchAction:" destination="SRW-8R-WKt" eventType="valueChanged" id="o2c-wq-bTZ"/>
-                                                </connections>
-                                            </switch>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2IM-WQ-OP4">
+                                                <rect key="frame" x="25" y="34.5" width="157.5" height="49"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ1-ZI-DZ6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7l-Zv-6Ah">
+                                                        <rect key="frame" x="0.0" y="28.5" width="109" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vZV-2k-kdv">
+                                                <rect key="frame" x="222" y="28" width="49" height="62"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQt-BD-a1f">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                        <color key="onTintColor" systemColor="systemPinkColor"/>
+                                                        <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="phonrNumberSwitchAction:" destination="SRW-8R-WKt" eventType="valueChanged" id="XOy-Ot-IuK"/>
+                                                        </connections>
+                                                    </switch>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="svS-TW-sx2">
+                                                        <rect key="frame" x="0.0" y="31" width="51" height="31"/>
+                                                        <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="adressSwitchAction:" destination="SRW-8R-WKt" eventType="valueChanged" id="o2c-wq-bTZ"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="vZV-2k-kdv" firstAttribute="centerY" secondItem="2IM-WQ-OP4" secondAttribute="centerY" id="3WA-fE-C61"/>
                                             <constraint firstAttribute="height" constant="98" id="71C-Wc-dzh">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                             </constraint>
-                                            <constraint firstItem="XQ1-ZI-DZ6" firstAttribute="leading" secondItem="uE2-7z-fq3" secondAttribute="leading" id="E7c-7r-JPF"/>
-                                            <constraint firstItem="V7l-Zv-6Ah" firstAttribute="top" secondItem="XQ1-ZI-DZ6" secondAttribute="bottom" constant="8" id="Ekb-Ih-O4p">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
-                                            </constraint>
-                                            <constraint firstItem="KQt-BD-a1f" firstAttribute="centerY" secondItem="XQ1-ZI-DZ6" secondAttribute="centerY" id="InS-kW-eVh"/>
                                             <constraint firstItem="uE2-7z-fq3" firstAttribute="leading" secondItem="GgI-4A-2Ly" secondAttribute="leading" constant="25" id="KwH-Qt-7Vp"/>
-                                            <constraint firstItem="V7l-Zv-6Ah" firstAttribute="leading" secondItem="XQ1-ZI-DZ6" secondAttribute="leading" id="Vo3-7G-LGN"/>
-                                            <constraint firstItem="svS-TW-sx2" firstAttribute="centerY" secondItem="V7l-Zv-6Ah" secondAttribute="centerY" id="YPR-G4-GLo"/>
-                                            <constraint firstItem="XQ1-ZI-DZ6" firstAttribute="top" secondItem="uE2-7z-fq3" secondAttribute="bottom" constant="5" id="ahM-bA-igC">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
-                                            </constraint>
+                                            <constraint firstItem="2IM-WQ-OP4" firstAttribute="leading" secondItem="uE2-7z-fq3" secondAttribute="leading" id="VHC-Dj-cig"/>
                                             <constraint firstItem="uE2-7z-fq3" firstAttribute="top" secondItem="GgI-4A-2Ly" secondAttribute="top" constant="9" id="jaU-aX-rDf"/>
-                                            <constraint firstItem="KQt-BD-a1f" firstAttribute="leading" secondItem="XQ1-ZI-DZ6" secondAttribute="trailing" constant="39.5" id="uHE-2d-g6q"/>
-                                            <constraint firstItem="svS-TW-sx2" firstAttribute="leading" secondItem="V7l-Zv-6Ah" secondAttribute="trailing" constant="88" id="wcp-Tp-xA5"/>
+                                            <constraint firstItem="vZV-2k-kdv" firstAttribute="leading" secondItem="2IM-WQ-OP4" secondAttribute="trailing" constant="39.5" id="pTF-We-cKL"/>
+                                            <constraint firstItem="2IM-WQ-OP4" firstAttribute="top" secondItem="uE2-7z-fq3" secondAttribute="bottom" constant="5" id="se1-bD-Trc"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bdA-Gu-kWo">
@@ -537,6 +542,9 @@
         <image name="logo" width="71" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

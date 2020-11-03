@@ -12,21 +12,45 @@ class CalendarController: UIViewController {
     private var firstDate: Date?
     private var lastDate: Date?
     
-    private var datesRange: [Date]?
+    private var datesRange = [Date]()
+    private var dates: [Date]? {
+        self.datesRange.filter({ (date) -> Bool in
+            let calendar = Calendar(identifier: .gregorian)
+            return !calendar.isDateInWeekend(date)
+        })
+    }
+    
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarSetup()
-
+        
     }
-   
+    
+    @IBAction func xyz() {
+        do {
+            let params = try getAllDatesString().asDictionary()
+            
+            
+        } catch {
+            print(error)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func calendarSetup() {
         calendar.allowsMultipleSelection = true
         calendar.delegate = self
         calendar.dataSource = self
+        
     }
     
-   private func datesRange(from: Date, to: Date) -> [Date] {
+    
+    private func datesRange(from: Date, to: Date) -> [Date] {
         
         if from > to { return [Date]() }
         
@@ -39,22 +63,31 @@ class CalendarController: UIViewController {
         }
         return array
     }
+    
 }
 
 extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
     func minimumDate(for calendar: FSCalendar) -> Date {
         let today = Date()
-        let tenDaysLater = Calendar.current.date(byAdding: .day, value: 15, to: today)!
-        return tenDaysLater
+        let daysLater = Calendar.current.date(byAdding: .day, value: 15, to: today)!
+        return daysLater
     }
+    
+    
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MMM-dd'T'HH:mm:ss'T"
         
         if firstDate == nil {
             firstDate = date
-            datesRange = [firstDate!]
+            datesRange.append(firstDate!)
             
-            print("datesRange contains: \(datesRange!)")
-            
+//
+            getAllDatesString()
             return
         }
         
@@ -62,10 +95,9 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             if date <= firstDate! {
                 calendar.deselect(firstDate!)
                 firstDate = date
-                datesRange = [firstDate!]
+                datesRange.append(firstDate!)
                 
-                print("datesRange contains: \(datesRange!)")
-                
+                getAllDatesString()
                 return
             }
             
@@ -76,8 +108,8 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             }
             
             datesRange = range
-            print("datesRange contains: \(datesRange!)")
-            
+
+            getAllDatesString()
             return
         }
         
@@ -90,8 +122,9 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             firstDate = nil
             
             datesRange = []
-            print("datesRange contains: \(datesRange!)")
+
         }
+       
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -103,9 +136,37 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
             
             lastDate = nil
             firstDate = nil
-            datesRange = []
-            print("datesRange contains: \(datesRange!)")
+            datesRange.removeAll()
+            
         }
+        
     }
+    
+    func getAllDatesString() -> VacantionRequestModel {
+        if let firstItem = dates?.first {
+            let formatter = DateFormatter()
+            formatter.calendar = Calendar(identifier: .gregorian)
+            formatter.timeZone = TimeZone.current
+            formatter.dateFormat = "yyyy-MMM-dd'T'HH:mm:ss'T"
+            let str = formatter.string(from: firstItem)
+            return VacantionRequestModel(startDt: str, days: dates!.count)
+        }
+        return VacantionRequestModel(startDt: "", days: 0)
+    }
+    
 }
 
+struct VacantionRequestModel: Codable {
+    var startDt: String
+    var days: Int
+}
+
+extension Encodable {
+  func asDictionary() throws -> [String: Any] {
+    let data = try JSONEncoder().encode(self)
+    guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+      throw NSError()
+    }
+    return dictionary
+  }
+}

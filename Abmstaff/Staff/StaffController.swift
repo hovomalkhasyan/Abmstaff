@@ -12,16 +12,16 @@ import SDWebImage
 class StaffController: UIViewController {
     
     // MARK: - Models
-    private var staffArray = [AllStaffDetails]()
     private var userArray = [UserModel]()
     
     // MARK: - EndPoints
-    private let staffEndpoint = "User/StaffListDetails"
+
     private let getStaff = "User/GetStaffList"
+    
     // MARK: - IBOutlets
     @IBOutlet weak var membersTableView: UITableView!
     
-    let paging = [ "count": 15,
+    private let paging = [ "count": 15,
                    "page": 1]
     
     // MARK: - LifeSycle
@@ -79,9 +79,9 @@ extension StaffController: UITableViewDelegate, UITableViewDataSource {
             cell.userAvatar.sd_setImage(with: url, placeholderImage: UIImage(named: "logo"))
         }
         cell.userName.text = userArray[indexPath.row].fullName
-        cell.phoneNumber.text = userArray[indexPath.row].phone
-        cell.userStatus.text = userArray[indexPath.row].position
-        cell.team.text = userArray[indexPath.row].team
+        cell.phoneNumber.text = userArray[indexPath.row].phone ?? "-"
+        cell.userStatus.text = userArray[indexPath.row].position ?? "-"
+        cell.team.text = userArray[indexPath.row].team ?? "-"
         cell.userView.layer.borderWidth = 0.3
         cell.userView.layer.borderColor = UIColor.lightGray.cgColor
         cell.selectionStyle = UITableViewCell.SelectionStyle.none

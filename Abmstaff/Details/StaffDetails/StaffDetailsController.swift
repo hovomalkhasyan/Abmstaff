@@ -87,25 +87,21 @@ class StaffDetailsController: UIViewController {
         present(mailVC, animated: true, completion: nil)
     }
     
-    @IBAction func callNumber(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            switch sender.tag {
-            case 0:
-                guard let phoneNumber = self.phoneNumber else {return}
-                guard let number = URL(string: "tel://" + phoneNumber) else { return }
-                UIApplication.shared.open(number)
-                
-            case 1:
-                guard let secondNumber = self.secondPhoneNumber else {return}
-                guard let number = URL(string: "tel://" + secondNumber) else { return }
-                UIApplication.shared.open(number)
-            default:
-                break
-            }
-        }
-        
+    
+    @IBAction func callPhoneNumber(_ sender: UIButton) {
+        guard let phoneNumber = self.phoneNumber else {return}
+        guard let number = URL(string: "tel://" + phoneNumber) else { return }
+        UIApplication.shared.open(number)
+    }
+    
+    
+    @IBAction func callSecondPhoneNumber(_ sender: UIButton) {
+        guard let secondNumber = self.secondPhoneNumber else {return}
+        guard let number = URL(string: "tel://" + secondNumber) else { return }
+        UIApplication.shared.open(number)
         
     }
+   
     
     @IBAction func sendMessage(_ sender: UIButton) {
         sendEmail()

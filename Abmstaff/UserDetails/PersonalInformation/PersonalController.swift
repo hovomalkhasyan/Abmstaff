@@ -8,13 +8,10 @@
 import UIKit
 import Alamofire
 
-
-
 class PersonalController: UIViewController {
     var userArray = [UserInfo]()
   
     // MARK: - Endpoints
-    
     private let userDet = "User/Details"
     private let editPrivacy = "User/EditPrivacy"
     
@@ -47,6 +44,7 @@ class PersonalController: UIViewController {
    
     // MARK: - LifeCycle
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         socialButtonsSetups()
@@ -90,6 +88,7 @@ class PersonalController: UIViewController {
         self.title = "Personal information"
     }
     
+  
     //MARK: - SocialButtons
     
     private func socialButtonsSetups() {
@@ -102,6 +101,8 @@ class PersonalController: UIViewController {
     
     private func setupSwitch() {
         adressSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        adressSwitch.onTintColor = UIColor(red: 246, green: 0, blue: 101, alpha: 0.32)
+        phoneNumberSwitch.onTintColor = UIColor(red: 246, green: 0, blue: 101, alpha: 0.32)
         phoneNumberSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
     }
     
@@ -114,13 +115,13 @@ class PersonalController: UIViewController {
             }
             let params : [String:Any] = ["privacyList" : privacyList]
             NetWorkService.request(url: editPrivacy, method: .put, param: params, encoding: JSONEncoding.default) { (response: Bool) in
-                print("number is hide")
+                print("Show phone number")
             }
         } else {
             privacyList.append(0)
             let params2 : [String:Any] = ["privacyList" : privacyList]
             NetWorkService.request(url: editPrivacy, method: .put, param: params2, encoding: JSONEncoding.default) { (response: Bool) in
-                print("Show phone number")
+                print("number is hide")
             }
         }
     }
@@ -133,13 +134,13 @@ class PersonalController: UIViewController {
             }
             let showAdresParams : [String:Any] = ["privacyList" : privacyList]
             NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
-                print("adress is hide")
+                print("show adress")
             }
         }else {
             privacyList.append(1)
             let showAdresParams : [String:Any] = ["privacyList" : privacyList]
             NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
-                print("show adress")
+                print("adress is hide")
             }
         }
     }

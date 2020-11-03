@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -268,7 +269,7 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 </variation>
                                                                 <connections>
-                                                                    <action selector="callNumber:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="VSD-8s-QBK"/>
+                                                                    <action selector="callPhoneNumber:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="c7M-Os-Adf"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -313,7 +314,7 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                                 </variation>
                                                                 <connections>
-                                                                    <action selector="callNumber:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="VsT-kD-UP8"/>
+                                                                    <action selector="callSecondPhoneNumber:" destination="AEe-iA-Ohj" eventType="touchUpInside" id="0H8-pI-qgy"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>

@@ -17,7 +17,7 @@ class UserController: UIViewController {
     var userArray = [UserInfo]()
     let userDet = "User/Details"
     var id = 0
-    var attributesArray = ["Personal information", "My team", "Salary", "Vacation", "Cloud", "Log out"]
+    var attributesArray = ["Personal information", "My team", "Salary", "Vacation", "Cloud"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,12 @@ class UserController: UIViewController {
         setupTableView()
        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     private func showAlert() {
         let alert = UIAlertController(title: "Log Out", message: "Are you sure want to log out ?", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Log Out", style: .default) { (alert) in
@@ -54,7 +60,11 @@ class UserController: UIViewController {
     
     private func navigationSetup() {
         self.navigationItem.leftItemsSupplementBackButton = true
-        self.navigationController?.isNavigationBarHidden = false
+        
+    }
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        showAlert()
     }
     
 }
@@ -82,8 +92,10 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
             let myteam = UIStoryboard(name: "Team", bundle: nil).instantiateViewController(identifier: "TeamController") as! TeamController
             myteam.teamId = id
             navigationController?.pushViewController(myteam, animated: true)
-        case 5:
-            showAlert()
+            
+        case 3:
+            let vacation = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(identifier: "CalendarController") as! CalendarController
+            navigationController?.pushViewController(vacation, animated: true)
         default:
             break
         }
