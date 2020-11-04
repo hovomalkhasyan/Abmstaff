@@ -164,7 +164,10 @@ struct DetailMember: Codable {
     let id: Int
     let firstName, lastName: String
     let profilePhoto: String?
-
+    
+    var fullName: String {
+        return firstName + " " + lastName
+    }
 }
 
 struct Platform: Codable {
@@ -176,13 +179,13 @@ struct Platform: Codable {
 
 }
 // MARK: - SettingsPlatform
-struct SettingsPlatform: Codable {
+struct Position: Codable {
     let membersCount, id: Int
     let name: String
 }
 
 // MARK: - SettingsPlatform
-struct Platforms: Codable {
+struct Technologies: Codable {
     let membersCount, id: Int
     let name: String
     let type: Int

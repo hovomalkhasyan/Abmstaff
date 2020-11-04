@@ -28,7 +28,7 @@ class UserController: UIViewController {
                 self.userImage.sd_setImage(with: url)
             }
             self.id = response.teamId ?? 0
-
+            
         }
         self.navigationController?.isNavigationBarHidden = true
         setupTableView()

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="141" y="217" width="35.5" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qng-LH-uEN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qng-LH-uEN">
                                 <rect key="frame" x="16" y="20" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qng-LH-uEN" secondAttribute="height" id="9TB-FH-tAT"/>
@@ -226,6 +226,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="71" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

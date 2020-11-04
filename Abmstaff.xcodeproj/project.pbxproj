@@ -56,12 +56,14 @@
 		DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55020252C88AF00EE5404 /* StaffController.swift */; };
 		DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC55023252C88C500EE5404 /* Staff.storyboard */; };
 		DAC55029252C895200EE5404 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC55028252C895200EE5404 /* StaffCell.swift */; };
-		DAD54212252F49C90020CD8F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD54211252F49C90020CD8F /* Settings.storyboard */; };
-		DAD54215252F49DD0020CD8F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54214252F49DD0020CD8F /* SettingsController.swift */; };
-		DAD54219252F4AE70020CD8F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54218252F4AE70020CD8F /* SettingsCell.swift */; };
-		DAD54227252F55860020CD8F /* Platforms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD54226252F55860020CD8F /* Platforms.storyboard */; };
-		DAD5422A252F559B0020CD8F /* PlatformsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD54229252F559B0020CD8F /* PlatformsController.swift */; };
-		DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */; };
+		DACC077225529D1C003870BD /* PositionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC077125529D1C003870BD /* PositionsCell.swift */; };
+		DACC077625529D32003870BD /* PositionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC077525529D32003870BD /* PositionsController.swift */; };
+		DACC077925529D4F003870BD /* Positions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC077825529D4F003870BD /* Positions.storyboard */; };
+		DACC077D2552B43C003870BD /* Technologies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACC077C2552B43C003870BD /* Technologies.storyboard */; };
+		DACC07802552B45B003870BD /* TechnologiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC077F2552B45B003870BD /* TechnologiesController.swift */; };
+		DACC07832552B47D003870BD /* TechnologiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC07822552B47D003870BD /* TechnologiesCell.swift */; };
+		DACC07872552BBFF003870BD /* MembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC07862552BBFF003870BD /* MembersCell.swift */; };
+		DACC078C2552CD38003870BD /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC078B2552CD38003870BD /* PlatformCell.swift */; };
 		DAD591E3254816E0005A92C8 /* VacationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD591E2254816E0005A92C8 /* VacationHeader.swift */; };
 		DAD591E625481A76005A92C8 /* CurrentYearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD591E525481A76005A92C8 /* CurrentYearCell.swift */; };
 		DAD591E925481AAE005A92C8 /* VacationHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD591E825481AAE005A92C8 /* VacationHistoryCell.swift */; };
@@ -130,12 +132,14 @@
 		DAC55020252C88AF00EE5404 /* StaffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffController.swift; sourceTree = "<group>"; };
 		DAC55023252C88C500EE5404 /* Staff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Staff.storyboard; sourceTree = "<group>"; };
 		DAC55028252C895200EE5404 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffCell.swift; sourceTree = "<group>"; };
-		DAD54211252F49C90020CD8F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		DAD54214252F49DD0020CD8F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		DAD54218252F4AE70020CD8F /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		DAD54226252F55860020CD8F /* Platforms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Platforms.storyboard; sourceTree = "<group>"; };
-		DAD54229252F559B0020CD8F /* PlatformsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformsController.swift; sourceTree = "<group>"; };
-		DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformsCell.swift; sourceTree = "<group>"; };
+		DACC077125529D1C003870BD /* PositionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionsCell.swift; sourceTree = "<group>"; };
+		DACC077525529D32003870BD /* PositionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionsController.swift; sourceTree = "<group>"; };
+		DACC077825529D4F003870BD /* Positions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Positions.storyboard; sourceTree = "<group>"; };
+		DACC077C2552B43C003870BD /* Technologies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Technologies.storyboard; sourceTree = "<group>"; };
+		DACC077F2552B45B003870BD /* TechnologiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologiesController.swift; sourceTree = "<group>"; };
+		DACC07822552B47D003870BD /* TechnologiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologiesCell.swift; sourceTree = "<group>"; };
+		DACC07862552BBFF003870BD /* MembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCell.swift; sourceTree = "<group>"; };
+		DACC078B2552CD38003870BD /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
 		DAD591E2254816E0005A92C8 /* VacationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationHeader.swift; sourceTree = "<group>"; };
 		DAD591E525481A76005A92C8 /* CurrentYearCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentYearCell.swift; sourceTree = "<group>"; };
 		DAD591E825481AAE005A92C8 /* VacationHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationHistoryCell.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 		DA5ED9E9252F416700B59941 /* ProjectDetails */ = {
 			isa = PBXGroup;
 			children = (
+				DACC07892552CCF2003870BD /* Cell */,
 				DA5ED9EA252F418800B59941 /* ProjectDetailsController.swift */,
 				DA5ED9EE252F419E00B59941 /* ProjectDetails.storyboard */,
 			);
@@ -299,6 +304,7 @@
 				DA94EF6B2525D41A00177EF7 /* Info.plist */,
 				DA94EF782525DAC700177EF7 /* Model.swift */,
 				DA9A2D392534623C00B35831 /* ViewDemo.swift */,
+				DACC077025529D01003870BD /* Positions  */,
 				DAC55026252C88C900EE5404 /* Staff */,
 				DAC1AD382546B62900105DB0 /* UserDetails */,
 				DAC1AD1E2546AA0100105DB0 /* Calendar */,
@@ -309,7 +315,6 @@
 				DA64A60E2538571900EEEB08 /* Partners */,
 				DA9A2D3D25348BDF00B35831 /* Login  */,
 				DAD54225252F55340020CD8F /* Technology */,
-				DAD54210252F49BC0020CD8F /* Settings */,
 				DA94E5B9252DE1300013C2B6 /* User */,
 				DA802D37252DFB480089EAE8 /* Conection */,
 				DA94E5AF252DDB150013C2B6 /* Projects */,
@@ -408,22 +413,31 @@
 			path = NetWorking;
 			sourceTree = "<group>";
 		};
-		DAD54210252F49BC0020CD8F /* Settings */ = {
+		DACC077025529D01003870BD /* Positions  */ = {
 			isa = PBXGroup;
 			children = (
-				DAD54211252F49C90020CD8F /* Settings.storyboard */,
-				DAD54214252F49DD0020CD8F /* SettingsController.swift */,
-				DAD54218252F4AE70020CD8F /* SettingsCell.swift */,
+				DACC077125529D1C003870BD /* PositionsCell.swift */,
+				DACC077525529D32003870BD /* PositionsController.swift */,
+				DACC077825529D4F003870BD /* Positions.storyboard */,
 			);
-			path = Settings;
+			path = "Positions ";
+			sourceTree = "<group>";
+		};
+		DACC07892552CCF2003870BD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DACC07862552BBFF003870BD /* MembersCell.swift */,
+				DACC078B2552CD38003870BD /* PlatformCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DAD54225252F55340020CD8F /* Technology */ = {
 			isa = PBXGroup;
 			children = (
-				DAD54226252F55860020CD8F /* Platforms.storyboard */,
-				DAD54229252F559B0020CD8F /* PlatformsController.swift */,
-				DAD5422C252F55FB0020CD8F /* PlatformsCell.swift */,
+				DACC077C2552B43C003870BD /* Technologies.storyboard */,
+				DACC077F2552B45B003870BD /* TechnologiesController.swift */,
+				DACC07822552B47D003870BD /* TechnologiesCell.swift */,
 			);
 			path = Technology;
 			sourceTree = "<group>";
@@ -518,8 +532,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5ED9EF252F419E00B59941 /* ProjectDetails.storyboard in Resources */,
+				DACC077925529D4F003870BD /* Positions.storyboard in Resources */,
 				DAC1AD572546EE3600105DB0 /* Vacation.storyboard in Resources */,
-				DAD54227252F55860020CD8F /* Platforms.storyboard in Resources */,
 				DA64A62825385F1800EEEB08 /* PartnerDetails.storyboard in Resources */,
 				DA94EF6A2525D41A00177EF7 /* LaunchScreen.storyboard in Resources */,
 				DA94EF672525D41A00177EF7 /* Assets.xcassets in Resources */,
@@ -528,12 +542,12 @@
 				DA5ED9D4252F270D00B59941 /* StaffDetails.storyboard in Resources */,
 				DA64A6132538574A00EEEB08 /* Partners.storyboard in Resources */,
 				DA94EF652525D41900177EF7 /* Main.storyboard in Resources */,
+				DACC077D2552B43C003870BD /* Technologies.storyboard in Resources */,
 				DAC1AD4D2546D74A00105DB0 /* Personal.storyboard in Resources */,
 				DA9A2D4725348C3000B35831 /* Login.storyboard in Resources */,
 				DAC55024252C88C500EE5404 /* Staff.storyboard in Resources */,
 				DA1D912F252DE7CE00AB4ADA /* User.storyboard in Resources */,
 				DAC1AD3F2546B66000105DB0 /* Team.storyboard in Resources */,
-				DAD54212252F49C90020CD8F /* Settings.storyboard in Resources */,
 				DAC1AD212546AA1600105DB0 /* Calendar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,8 +606,10 @@
 				DA5ED9EB252F418800B59941 /* ProjectDetailsController.swift in Sources */,
 				DAD591E3254816E0005A92C8 /* VacationHeader.swift in Sources */,
 				DAD93D4D2541EF4300C6190C /* Footer.swift in Sources */,
+				DACC07832552B47D003870BD /* TechnologiesCell.swift in Sources */,
 				DAC1AD3B2546B64A00105DB0 /* TeamController.swift in Sources */,
 				DA94E5B4252DDB490013C2B6 /* ProjectController.swift in Sources */,
+				DACC078C2552CD38003870BD /* PlatformCell.swift in Sources */,
 				DA305B5B25260341007ED275 /* UserController.swift in Sources */,
 				DAC1AD492546D73300105DB0 /* PersonalController.swift in Sources */,
 				DA802D3B252DFBAF0089EAE8 /* NetworkConnection.swift in Sources */,
@@ -613,6 +629,7 @@
 				DA8812292541D1CA00F5A4F1 /* HomePageController.swift in Sources */,
 				DAE22C032541974F00E73C0D /* MoreController.swift in Sources */,
 				DA9516A1255161BD00318DA8 /* WarmodroidSwitch.swift in Sources */,
+				DACC07872552BBFF003870BD /* MembersCell.swift in Sources */,
 				DAC55021252C88AF00EE5404 /* StaffController.swift in Sources */,
 				DAD686612535B79900E239C7 /* textFld.swift in Sources */,
 				DAC1AD242546AA2D00105DB0 /* CalendarController.swift in Sources */,
@@ -620,22 +637,21 @@
 				DA2EC571254181B80083BEE7 /* Ext.swift in Sources */,
 				DAD93D502541EF9C00C6190C /* ProjectTeam.swift in Sources */,
 				DA94EF762525D70100177EF7 /* NetWorkService.swift in Sources */,
-				DAD5422D252F55FB0020CD8F /* PlatformsCell.swift in Sources */,
 				DAE22C182541B55800E73C0D /* TeamViewController.swift in Sources */,
 				DA2EC5742541835D0083BEE7 /* AttributesCell.swift in Sources */,
 				DA51111E253DB8FD00F67C7A /* TeamDetailsCell.swift in Sources */,
-				DAD54219252F4AE70020CD8F /* SettingsCell.swift in Sources */,
 				DAC1AD422546B67E00105DB0 /* TeamCell.swift in Sources */,
+				DACC077225529D1C003870BD /* PositionsCell.swift in Sources */,
 				DA9A2D3F25348C0600B35831 /* EnterCodeController.swift in Sources */,
 				DA305B5E2526050C007ED275 /* UsersCell.swift in Sources */,
-				DAD54215252F49DD0020CD8F /* SettingsController.swift in Sources */,
 				DA94EF602525D41900177EF7 /* SceneDelegate.swift in Sources */,
+				DACC077625529D32003870BD /* PositionsController.swift in Sources */,
 				DAD591E925481AAE005A92C8 /* VacationHistoryCell.swift in Sources */,
 				DAD591E625481A76005A92C8 /* CurrentYearCell.swift in Sources */,
-				DAD5422A252F559B0020CD8F /* PlatformsController.swift in Sources */,
 				DADE1E3B253D79DC00B62693 /* TeamCells.swift in Sources */,
 				DAC0ED9B254C2D9E004B88BD /* ContactCell.swift in Sources */,
 				DAC55029252C895200EE5404 /* StaffCell.swift in Sources */,
+				DACC07802552B45B003870BD /* TechnologiesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

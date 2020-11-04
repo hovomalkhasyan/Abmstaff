@@ -75,7 +75,7 @@ class WarmodroidSwitch: UIView {
         thumb.widthAnchor.constraint(equalToConstant: frame.size.height).isActive = true
         thumb.layer.cornerRadius = frame.size.height/2
         let thumbTapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnThumb))
-        thumb.addGestureRecognizer(thumbTapGesture)
+        self.addGestureRecognizer(thumbTapGesture)
     }
     
     @objc private func didTapOnThumb() {

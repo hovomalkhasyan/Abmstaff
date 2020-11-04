@@ -43,6 +43,19 @@ extension MoreController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 1:
+            let position = UIStoryboard(name: "Positions", bundle: nil).instantiateViewController(identifier: "PositionsController") as! PositionsController
+            navigationController?.pushViewController(position, animated: true)
+        case 2:
+            let tecStoryboard = UIStoryboard(name: "Technologies", bundle: nil).instantiateViewController(identifier: "TechnologiesController") as! TechnologiesController
+            navigationController?.pushViewController(tecStoryboard, animated: true)
+        default:
+            break
+        }
+    }
+    
 }
 
 extension MoreController: UICollectionViewDataSource, UICollectionViewDelegate {

@@ -18,6 +18,9 @@ class StaffDetailsController: UIViewController {
     private var fblink: String?
     private var instaLink: String?
     private var lnLink: String?
+    
+    
+    @IBOutlet weak var staffView: UIView!
     @IBOutlet weak var lnBtn: UIButton!
     @IBOutlet weak var instBtn: UIButton!
     @IBOutlet weak var fbButon: UIButton!
@@ -34,7 +37,9 @@ class StaffDetailsController: UIViewController {
     @IBOutlet weak var date: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         setupSocialButtons()
+        
         NetWorkService.request(url: edpoint + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: UserDetailsId ) in
             
             self.userPosition.text = response.positionName
@@ -55,19 +60,20 @@ class StaffDetailsController: UIViewController {
             self.mail = response.email
             self.secondPhoneNumber = response.secondPhone
             
+            self.fblink = response.facebookLink
+            self.instaLink = response.instagramLink
+            self.lnLink = response.linkedinLink
             
             if response.facebookLink != nil {
-                self.fblink = response.facebookLink
                 self.fbButon.isHidden = false
             }
             if response.instagramLink != nil {
-                self.instaLink = response.instagramLink
                 self.instBtn.isHidden = false
             }
             if response.linkedinLink != nil{
-                self.lnLink = response.linkedinLink
                 self.lnBtn.isHidden = false
             }
+            
         }
     }
     
