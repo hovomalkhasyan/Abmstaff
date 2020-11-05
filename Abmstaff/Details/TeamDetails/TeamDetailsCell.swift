@@ -14,9 +14,10 @@ class TeamDetailsCell: UITableViewCell {
     @IBOutlet weak var position: UILabel!
     @IBOutlet weak var lastName: UILabel!
     @IBOutlet weak var userName: UILabel!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
     
     override func prepareForReuse() {

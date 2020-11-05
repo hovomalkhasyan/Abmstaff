@@ -9,17 +9,42 @@ import UIKit
 import Alamofire
 
 class TeamDetailsController: UIViewController {
+    
+    private let detailsEndPoint = "Team/Details/"
+    private var members = [Member]()
+    private var teamProject = [TeamProject]()
+    var id = 0
+    
     @IBOutlet weak var segmentContoll: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var membersTableView: UITableView!
-    var detailsEndPoint = "Team/Details/"
-    var members = [Member]()
-    var teamProject = [TeamProject]()
-    var id = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         setupTableView()
+        getTeamDetails()
+        setupSegmentControl()
+        
+    }
+    
+    private func setupTableView() {
+        
+        membersTableView.delegate = self
+        membersTableView.dataSource = self
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
+        
+    }
+    
+    private func setupSegmentControl() {
+        
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        
+    }
+    
+    private func getTeamDetails() {
+        
         NetWorkService.request(url: detailsEndPoint + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: TeamDetailsID ) in
             self.title = response.name
             self.members = response.members
@@ -27,27 +52,27 @@ class TeamDetailsController: UIViewController {
             self.teamProject = project
             self.membersTableView.reloadData()
         }
+
     }
-    private func setupTableView() {
-        membersTableView.delegate = self
-        membersTableView.dataSource = self
-        detailTableView.delegate = self
-        detailTableView.dataSource = self
-    }
+    
     @IBAction func segment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
+        
         case 0:
             detailTableView.isHidden = true
             membersTableView.isHidden = false
             membersTableView.reloadData()
+            
         case 1:
             membersTableView.isHidden = true
             detailTableView.isHidden = false
             detailTableView.reloadData()
+            
         default:
             break
         }
     }
+    
 }
 
 extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
@@ -58,7 +83,9 @@ extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
         }else {
             return teamProject.count
         }
+        
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.membersTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TeamDetailsCell", for: indexPath) as! TeamDetailsCell
@@ -77,7 +104,9 @@ extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
+        
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.membersTableView  {
             let newVC = UIStoryboard(name: "StaffDetails", bundle: nil).instantiateViewController(identifier: "StaffDetailsController") as! StaffDetailsController
@@ -89,5 +118,6 @@ extension TeamDetailsController: UITableViewDelegate, UITableViewDataSource {
             detailsVC.id = teamProject[indexPath.row].id
         }
     }
+    
 }
 

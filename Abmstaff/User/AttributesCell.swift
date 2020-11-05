@@ -12,6 +12,7 @@ class AttributesCell: UITableViewCell {
     @IBOutlet weak var attributesImage: UIImageView!
     @IBOutlet weak var attributesView: UIView!
     @IBOutlet weak var attributesLbl: UILabel!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

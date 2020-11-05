@@ -14,9 +14,11 @@ class PositionsCell: UITableViewCell {
     @IBOutlet weak var positionView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         positionView.layer.borderWidth = 0.3
         positionView.layer.borderColor = UIColor.lightGray.cgColor
         positionView.layer.cornerRadius = 10
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

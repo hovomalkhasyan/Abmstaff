@@ -21,11 +21,14 @@ public class CheckInternet {
             $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
                 SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
             }
+            
         }
         
         var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
+        
         if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
             return false
+            
         }
         
         

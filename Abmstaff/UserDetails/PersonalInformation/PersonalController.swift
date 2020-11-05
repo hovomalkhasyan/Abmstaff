@@ -9,18 +9,18 @@ import UIKit
 import Alamofire
 
 class PersonalController: UIViewController {
-    var userArray = [UserInfo]()
-  
+    private var userArray = [UserInfo]()
+    
     // MARK: - Endpoints
     private let userDet = "User/Details"
     private let editPrivacy = "User/EditPrivacy"
     
     //MARK: - Properties
     
-    var fblink : String?
-    var instaLink: String?
-    var lnLink : String?
-    var privacyList = [Int]()
+    private var fblink : String?
+    private var instaLink: String?
+    private var lnLink : String?
+    private var privacyList = [Int]()
     
     //MARK: - Outlets
     
@@ -43,15 +43,53 @@ class PersonalController: UIViewController {
     @IBOutlet weak var dateOfBirth: UILabel!
     @IBOutlet weak var userPosition: UILabel!
     @IBOutlet weak var userFullName: UILabel!
-   
+    
     // MARK: - LifeCycle
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         socialButtonsSetups()
         switchesDelegate()
-//        setupSwitch()
+        getPersonalInformation()
+        setupPrivacyView()
+        setupNavigationBar()
+    }
+    
+    
+    //MARK: - SocialButtons
+    
+    private func socialButtonsSetups() {
+        fbButton.isHidden = true
+        instaBtn.isHidden = true
+        lnBtn.isHidden = true
+    }
+    
+    private func setupNavigationBar() {
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.title = "Personal information"
+        
+    }
+    
+    private func switchesDelegate() {
+        
+        phoneNumberSwitchView.delegate = self
+        showAdresSwitchView.delegate = self
+        
+    }
+    
+    private func setupPrivacyView() {
+        
+        privacyView.layer.borderWidth = 0.3
+        privacyView.layer.borderColor = UIColor.lightGray.cgColor
+        privacyView.layer.cornerRadius = 13
+        
+    }
+    
+    private func getPersonalInformation() {
+        
         NetWorkService.request(url: userDet, method: .get, param: nil, encoding: JSONEncoding.default) { [self] (response: UserInfo) in
             
             self.team.text = response.team
@@ -88,27 +126,9 @@ class PersonalController: UIViewController {
             self.privacyList = privacy
             
         }
-        privacyView.layer.borderWidth = 0.3
-        privacyView.layer.borderColor = UIColor.lightGray.cgColor
-        privacyView.layer.cornerRadius = 13
-        self.navigationController?.isNavigationBarHidden = false
-        self.title = "Personal information"
+        
     }
     
-  
-    //MARK: - SocialButtons
-    
-    private func socialButtonsSetups() {
-        fbButton.isHidden = true
-        instaBtn.isHidden = true
-        lnBtn.isHidden = true
-    }
-    
-    private func switchesDelegate() {
-        phoneNumberSwitchView.delegate = self
-        showAdresSwitchView.delegate = self
-    }
-      
     //MARK: - SocialMediaActions
     
     @IBAction func socialMedia(_ sender: UIButton) {
@@ -118,16 +138,19 @@ class PersonalController: UIViewController {
             if let url = URL(string: link) {
                 UIApplication.shared.open(url)
             }
+            
         case 1:
             guard let link = instaLink else {return}
             if let url = URL(string: link) {
                 UIApplication.shared.open(url)
             }
+            
         case 2:
             guard let link = lnLink else {return}
             if let url = URL(string: link) {
                 UIApplication.shared.open(url)
             }
+            
         default:
             break
         }
@@ -145,6 +168,7 @@ extension PersonalController: WarmodroidSwitchDelegate {
                 NetWorkService.request(url: editPrivacy, method: .put, param: params, encoding: JSONEncoding.default) { (response: Bool) in
                     print("Show phone number")
                 }
+                
             } else {
                 privacyList.append(0)
                 let params2 : [String:Any] = ["privacyList" : privacyList]
@@ -152,6 +176,7 @@ extension PersonalController: WarmodroidSwitchDelegate {
                     print("number is hide")
                 }
             }
+            
         } else {
             
             if showAdresSwitchView.isOn == true {
@@ -162,6 +187,7 @@ extension PersonalController: WarmodroidSwitchDelegate {
                 NetWorkService.request(url: editPrivacy, method: .put, param: showAdresParams, encoding: JSONEncoding.default) { (response: Bool) in
                     print("show adress")
                 }
+                
             } else {
                 privacyList.append(1)
                 let showAdresParams : [String:Any] = ["privacyList" : privacyList]
@@ -171,4 +197,6 @@ extension PersonalController: WarmodroidSwitchDelegate {
             }
         }
     }
+    
+    
 }

@@ -14,11 +14,11 @@ class PartnersCell: UITableViewCell {
     @IBOutlet weak var partnerView: UIView!
     @IBOutlet weak var partnerName: UILabel!
     @IBOutlet weak var partnersAvatar: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        partnerView.layer.borderWidth = 0.3
-        partnerView.layer.borderColor = UIColor.lightGray.cgColor
-        partnerView.layer.cornerRadius = 10
+        setupPartnerView()
+        
     }
     
     override func prepareForReuse() {
@@ -26,11 +26,19 @@ class PartnersCell: UITableViewCell {
         partnersAvatar.image = UIImage(named: "logo")
     }
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         
     }
-
+    
+    private func setupPartnerView() {
+        
+        partnerView.layer.borderWidth = 0.3
+        partnerView.layer.borderColor = UIColor.lightGray.cgColor
+        partnerView.layer.cornerRadius = 10
+        
+    }
+    
 }

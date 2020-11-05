@@ -53,19 +53,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
         signUp = false
+        textFieldsDelegate()
         setupTextFields()
-        loginTF.delegate = self
-        passwordTF.delegate = self
+        tapGesture()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerNotifications()
-
+        
     }
     
     private func setupTextFields() {
@@ -74,14 +72,34 @@ class ViewController: UIViewController {
         
     }
     
+    private func setupNavigation() {
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    private func textFieldsDelegate() {
+        loginTF.delegate = self
+        passwordTF.delegate = self
+        
+    }
+    
+    private func tapGesture() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
     // MARK: - KeyboardSettings
     
     private func registerNotifications() {
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     @objc private func keyboardWillShow(notification: NSNotification){
+        
         guard let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         scrollView.contentInset.bottom = view.convert(keyboardFrame, from: nil).size.height
         scrollView.contentOffset = CGPoint(x: 0, y: keyboardFrame.height)
@@ -99,6 +117,7 @@ class ViewController: UIViewController {
     // MARK: - SigninAction
     
     @IBAction func signinAction(_ sender: UIButton) {
+        
         if CheckInternet.Connection() {
             self.view.endEditing(true)
             if signUp == false{
@@ -116,6 +135,7 @@ class ViewController: UIViewController {
                         UIApplication.shared.windows.first?.rootViewController = newVC
                     }
                 }
+                
             } else {
                 if loginTF.text == "" {
                     showAlert(title: "Email is empty", message: "Please enter your email")
@@ -124,9 +144,11 @@ class ViewController: UIViewController {
                     navigationController?.pushViewController(codeStory, animated: true)
                 }
             }
+            
         } else {
             showConnectionAlert()
         }
+        
     }
     
     private func showAlert(title: String, message: String) {
@@ -134,6 +156,7 @@ class ViewController: UIViewController {
         let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okBtn)
         present(alert, animated: true, completion: nil)
+        
     }
     
     private func showConnectionAlert() {
@@ -147,15 +170,18 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
         alertController.addAction(alertAcion)
         alertController.addAction(settingsAction)
         present(alertController, animated: true, completion: nil)
+        
     }
     
     // MARK: - IBActionforgotPassword
     
     @IBAction func forgotPassword(_ sender: UIButton) {
         signUp = !signUp
+        
     }
     
     // MARK: - IBActionshowPassword
@@ -164,6 +190,7 @@ class ViewController: UIViewController {
         if(iconClick == true) {
             passwordTF.isSecureTextEntry = false
             passwordShowbtn.setImage(UIImage(named: "show"), for: .normal)
+            
         } else {
             passwordTF.isSecureTextEntry = true
             passwordShowbtn.setImage(UIImage(named: "show1"), for: .normal)
@@ -179,12 +206,15 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
+        
         case loginTF:
             passwordTF.becomeFirstResponder()
+            
         case passwordTF:
             UIView.animate(withDuration: 1) {
                 self.view.endEditing(true)
             }
+            
         default:
             break
         }

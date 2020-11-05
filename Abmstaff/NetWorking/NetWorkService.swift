@@ -10,15 +10,17 @@ import Alamofire
 
 
 class NetWorkService {
-   private static let baseUrl = "https://api.abmstaff.com/api/"
-   private static let alamofireSessionMeneger = Alamofire.Session.default
+    private static let baseUrl = "https://api.abmstaff.com/api/"
+    private static let alamofireSessionMeneger = Alamofire.Session.default
     
     class func getHeaders() -> HTTPHeaders? {
         if let token = UserDefaults.standard.value(forKey: "token") as? String {
             return  ["Authorization": "Bearer \(token)"]
         }
         return nil
+        
     }
+    
     class func request<T:Codable>(url: String, method: HTTPMethod, param:Parameters?, encoding: JSONEncoding, complition: @escaping (T) -> Void ) {
         alamofireSessionMeneger.request(baseUrl + url, method: method, parameters: param, encoding: encoding , headers: getHeaders()).responseJSON { (resp) in
             switch resp.result {
@@ -45,6 +47,7 @@ class NetWorkService {
                 
             }
         }
+        
     }
     private class func showAlert(title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)

@@ -15,19 +15,48 @@ class StaffController: UIViewController {
     private var userArray = [UserModel]()
     
     // MARK: - EndPoints
-
+    
     private let getStaff = "User/GetStaffList"
     
     // MARK: - IBOutlets
     @IBOutlet weak var membersTableView: UITableView!
     
     private let paging = [ "count": 15,
-                   "page": 1]
+                           "page": 1]
+    
     
     // MARK: - LifeSycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        requestStaff()
+        setupNavgation()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    // MARK: - TableViewSetups
+    private func setupTableView() {
+        
+        membersTableView.delegate = self
+        membersTableView.dataSource = self
+        membersTableView.contentInset.top = 10
+        
+    }
+    
+    private func setupNavgation() {
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        self.title = "Members"
+        
+    }
+    
+    private func requestStaff() {
         
         let parameters :  [String : Any?] = [
             "firstName": nil,
@@ -47,21 +76,8 @@ class StaffController: UIViewController {
             self.membersTableView.reloadData()
         }
         
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        self.title = "Members"
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
     }
     
-    // MARK: - TableViewSetups
-    private func setupTableView() {
-        membersTableView.delegate = self
-        membersTableView.dataSource = self
-        membersTableView.contentInset.top = 10
-    }
 }
 
 
@@ -94,7 +110,9 @@ extension StaffController: UITableViewDelegate, UITableViewDataSource {
         let newVC = UIStoryboard(name: "StaffDetails", bundle: nil).instantiateViewController(identifier: "StaffDetailsController") as! StaffDetailsController
         newVC.id = userArray[indexPath.row].id
         navigationController?.pushViewController(newVC, animated: true)
+        
     }
+    
 }
 
 

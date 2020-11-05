@@ -10,15 +10,15 @@ import Alamofire
 import MessageUI
 
 class StaffDetailsController: UIViewController {
-    var edpoint = "User/StaffDetails/"
+    private let edpoint = "User/StaffDetails/"
     var id = 0
     var phoneNumber : String?
     var secondPhoneNumber: String?
     var mail : String?
+   
     private var fblink: String?
     private var instaLink: String?
     private var lnLink: String?
-    
     
     @IBOutlet weak var staffView: UIView!
     @IBOutlet weak var lnBtn: UIButton!
@@ -35,10 +35,42 @@ class StaffDetailsController: UIViewController {
     @IBOutlet weak var team: UILabel!
     @IBOutlet weak var adress: UILabel!
     @IBOutlet weak var date: UILabel!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+
         setupSocialButtons()
+        getStaffDetails()
+       
+    }
+    
+    private func setupSocialButtons() {
+        
+        fbButon.isHidden = true
+        instBtn.isHidden = true
+        lnBtn.isHidden = true
+        
+    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mailVC = MFMailComposeViewController()
+            mailVC.mailComposeDelegate = self
+            guard let email = mail else {return}
+            mailVC.setToRecipients([email])
+            present(mailVC, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "You can not send email", message: nil, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    private func getStaffDetails() {
         
         NetWorkService.request(url: edpoint + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: UserDetailsId ) in
             
@@ -75,31 +107,20 @@ class StaffDetailsController: UIViewController {
             }
             
         }
+        
     }
-    
-    private func setupSocialButtons() {
-        fbButon.isHidden = true
-        instBtn.isHidden = true
-        lnBtn.isHidden = true
-    }
-    
-    func sendEmail() {
-        let mailVC = MFMailComposeViewController()
-        mailVC.mailComposeDelegate = self
-        guard let email = mail else {return}
-        mailVC.setToRecipients([email])
-        present(mailVC, animated: true, completion: nil)
-    }
-    
     
     @IBAction func callPhoneNumber(_ sender: UIButton) {
+       
         guard let phoneNumber = self.phoneNumber else {return}
         guard let number = URL(string: "tel://" + phoneNumber) else { return }
         UIApplication.shared.open(number)
+        
     }
     
     
     @IBAction func callSecondPhoneNumber(_ sender: UIButton) {
+       
         guard let secondNumber = self.secondPhoneNumber else {return}
         guard let number = URL(string: "tel://" + secondNumber) else { return }
         UIApplication.shared.open(number)
@@ -109,33 +130,41 @@ class StaffDetailsController: UIViewController {
     
     @IBAction func sendMessage(_ sender: UIButton) {
         sendEmail()
+        
     }
     
     @IBAction func goTosocial(_ sender: UIButton) {
         switch sender.tag {
+      
         case 0:
             guard let link = fblink else {return}
             if let url = URL(string: link) {
                 UIApplication.shared.open(url)
             }
+       
         case 1:
             guard let link = instaLink else {return}
             if let url = URL(string: link) {
                 UIApplication.shared.open(url)
             }
+       
         case 2:
             guard let link = lnLink else {return}
             if let url = URL(string: link) {
                 UIApplication.shared.open(url)
             }
+
         default:
             break
         }
     }
+    
 }
 
 extension StaffDetailsController: MFMailComposeViewControllerDelegate {
+ 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
     }
+    
 }

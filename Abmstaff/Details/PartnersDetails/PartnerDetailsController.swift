@@ -9,19 +9,35 @@ import UIKit
 import Alamofire
 
 class PartnerDetailsController: UIViewController {
+   
     private var partnerDetailsApi = "Partner/Details/"
     private var partnerContact = "ContactPerson/GetAll/"
     var id = 0
-    var partnerContacts = [PartnersContacts]()
+    private var partnerContacts = [PartnersContacts]()
+  
     @IBOutlet weak var partnerLogo: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var secondPhoneOutlet: UIButton!
     @IBOutlet weak var phoneBtnOutlet: UIButton!
     @IBOutlet weak var emailBtnOutlet: UIButton!
     @IBOutlet weak var partnersName: UILabel!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        getPartnersInfo()
+        getPartnerssContact()
+        
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+    }
+    
+    private func getPartnersInfo() {
+        
         NetWorkService.request(url: partnerDetailsApi + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: PartnerDetails) in
             self.partnersName.text = response.companyName
             if let urlImage = response.logo, let url = URL(string: urlImage) {
@@ -29,15 +45,15 @@ class PartnerDetailsController: UIViewController {
             }
         }
         
+    }
+    
+    private func getPartnerssContact() {
+        
         NetWorkService.request(url: partnerContact + String(id), method: .get, param: nil, encoding: JSONEncoding.default) { (response: [PartnersContacts]) in
             self.partnerContacts = response
             self.tableView.reloadData()
         }
-    }
-    
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        
     }
     
 }
@@ -45,6 +61,7 @@ class PartnerDetailsController: UIViewController {
 extension PartnerDetailsController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return partnerContacts.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,6 +74,7 @@ extension PartnerDetailsController: UITableViewDataSource, UITableViewDelegate {
         cell.secondPhone = partnerContacts[indexPath.row].secondPhone
         cell.email = partnerContacts[indexPath.row].email
         return cell
+        
     }
     
     

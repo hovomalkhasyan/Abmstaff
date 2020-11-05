@@ -10,26 +10,39 @@ import Alamofire
 
 class TeamViewController: UIViewController {
     private let teamUrlEndPoint = "Team/GetAll"
-    var teamArray = [TeamList]()
+    private var teamArray = [TeamList]()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        getAllteam()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
+        
+    }
+    
+    private func setupTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.contentInset.top = 10
+        
+    }
+    
+    
+    private func getAllteam() {
+        
         NetWorkService.request(url: teamUrlEndPoint, method: .get, param: nil, encoding: JSONEncoding.default) { (response: [TeamList]) in
             self.teamArray = response
             self.tableView.reloadData()
         }
     }
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.contentInset.top = 10
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
 }
 
 extension TeamViewController: UITableViewDelegate, UITableViewDataSource{

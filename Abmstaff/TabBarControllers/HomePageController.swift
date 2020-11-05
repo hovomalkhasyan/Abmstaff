@@ -34,28 +34,34 @@ enum SectionType: Int,CaseIterable {
             return "#1 Teams Projects"
         }
     }
+    
 }
 
 class HomePageController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.top = 20
     }
+    
 }
 
 extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
+        
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return SectionType.allCases.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,6 +74,7 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeCell
             return cell
         }
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -81,12 +88,14 @@ extension HomePageController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
+        
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = tableView.dequeueReusableCell(withIdentifier: "Footer") as! Footer
         
         return footer
+        
     }
     
 }
